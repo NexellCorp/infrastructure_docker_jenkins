@@ -1,0 +1,22 @@
+#deb http://ftp.debian.org/debian jessie main
+#deb http://ftp.debian.org/debian jessie-updates main
+#deb http://security.debian.org jessie/updates main
+#deb http://ftp.debian.org/debian/ jessie-backports main contrib non-free
+
+#############################################################
+################### OFFICIAL DEBIAN REPOS ###################
+#############################################################
+
+#deb http://ftp.us.debian.org/debian/ stable main contrib non-free
+deb http://ftp.us.debian.org/debian jessie main contrib non-free
+deb http://ftp.debian.org/debian/ jessie-updates main contrib non-free
+#deb http://mirrors.kernel.org/debian jessie-updates main contrib
+deb http://security.debian.org/ jessie/updates main contrib non-free
+
+# Debian Backports - http://backports.debian.org/
+deb http://ftp.debian.org/debian/ jessie-backports main contrib non-free
+#deb http://mirrors.kernel.org/debian jessie-backports main contrib non-free
+
+# Iceweasel (aka Firefox)
+deb http://mozilla.debian.net/ jessie-backports iceweasel-release
+

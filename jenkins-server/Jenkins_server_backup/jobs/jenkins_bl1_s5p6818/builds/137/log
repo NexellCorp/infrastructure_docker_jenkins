@@ -1,0 +1,119 @@
+Triggered by Gerrit: http://git.nexell.co.kr:8081/gerrit/1756
+Building in workspace /var/jenkins_home/workspace/jenkins_bl1_s5p6818
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818
+ > git init /var/jenkins_home/workspace/jenkins_bl1_s5p6818 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 refs/changes/56/1756/5
+ > git rev-parse 8d53de9d01c6eb6a2f6e844fb12d7d0c0c964020^{commit} # timeout=10
+Checking out Revision 8d53de9d01c6eb6a2f6e844fb12d7d0c0c964020 (refs/changes/56/1756/5)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8d53de9d01c6eb6a2f6e844fb12d7d0c0c964020
+ > git rev-parse FETCH_HEAD^{commit} # timeout=10
+ > git rev-list cf3d586f519d38383d7932f9ecd9cbfb85585ba7 # timeout=10
+[jenkins_bl1_s5p6818] $ /bin/sh /tmp/hudson3848118566337802887.sh
+[compile....src/startup_aarch32.S]
+[compile....src/aarch32_libs.S]
+[compile....src/aarch32_exception_handler.c]
+[compile....src/secondboot.c]
+src/secondboot.c: In function 'BootMain':
+src/secondboot.c:396:23: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   void (*pLaunch)() = (void (*)())(tbi->startaddr);
+                       ^
+src/secondboot.c:154:19: warning: unused parameter 'CPUID' [-Wunused-parameter]
+ void BootMain(U32 CPUID)
+                   ^
+[compile....src/subcpu.c]
+src/subcpu.c: In function 'SubCPUBringUp':
+src/subcpu.c:136:17: warning: unused variable 'retry' [-Wunused-variable]
+  S32 CPUNumber, retry = 0;
+                 ^
+src/subcpu.c:136:6: warning: unused variable 'CPUNumber' [-Wunused-variable]
+  S32 CPUNumber, retry = 0;
+      ^
+src/subcpu.c:134:40: warning: unused variable 'pCPUStartInfo' [-Wunused-variable]
+  register struct NX_SubCPUBringUpInfo *pCPUStartInfo =
+                                        ^
+[compile....src/sleep.c]
+[compile....src/resetcon.c]
+[compile....src/GPIO.c]
+[compile....src/crc.c]
+[compile....src/SecureManager.c]
+[compile....src/clockinit.c]
+[compile....src/debug.c]
+[compile....src/lib2ndboot.c]
+[compile....src/buildinfo.c]
+[compile....src/printf.c]
+[compile....src/sysbus.c]
+[compile....src/init_DDR3.c]
+[compile....src/CRYPTO.c]
+[compile....src/i2c_gpio.c]
+[compile....src/pmic.c]
+src/pmic.c: In function 'PMIC_AVN':
+src/pmic.c:305:6: warning: unused variable 'board_rev' [-Wunused-variable]
+  U32 board_rev = 0;
+      ^
+src/pmic.c: At top level:
+src/pmic.c:228:11: warning: 'nxe2000_get_ldo7_step' defined but not used [-Wunused-function]
+ static U8 nxe2000_get_ldo7_step(int want_vol)
+           ^
+[compile....src/iUSBBOOT.c]
+src/iUSBBOOT.c: In function 'header_check':
+src/iUSBBOOT.c:435:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+    (U8 *)((U8 *)(tbi->loadaddr) + sizeof(*tbi));
+           ^
+src/iUSBBOOT.c: In function 'memcpy':
+src/iUSBBOOT.c:786:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < (cnt >> 2); i++)
+                ^
+src/iUSBBOOT.c:788:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < (cnt & 3); i++)
+                ^
+src/iUSBBOOT.c: In function 'post_process':
+src/iUSBBOOT.c:817:9: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [enabled by default]
+         tbi->dbi[0].usbbi.split_size);
+         ^
+src/iUSBBOOT.c:780:13: note: expected 'void *' but argument is of type 'uint64_t'
+ static void memcpy(void *dst, const void *src, uint32_t cnt)
+             ^
+src/iUSBBOOT.c:821:9: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [enabled by default]
+         tbi->dbi[1].usbbi.split_size);
+         ^
+src/iUSBBOOT.c:780:13: note: expected 'void *' but argument is of type 'uint64_t'
+ static void memcpy(void *dst, const void *src, uint32_t cnt)
+             ^
+src/iUSBBOOT.c: In function 'iUSBBOOT':
+src/iUSBBOOT.c:827:21: warning: unused variable 'tbi' [-Wunused-variable]
+  struct nx_tbbinfo *tbi = (struct nx_tbbinfo *)pTBI;
+                     ^
+[compile....src/iSDHCBOOT.c]
+src/iSDHCBOOT.c: In function 'SDMMCBOOT':
+src/iSDHCBOOT.c:1079:26: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  unsigned int *tb_load = (unsigned int*)ptbh->tbbi.loadaddr;
+                          ^
+src/iSDHCBOOT.c:1098:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+  ptbh = (struct nx_bootheader *)ptbh->tbbi.loadaddr;
+         ^
+src/iSDHCBOOT.c:1113:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+   Decrypt((unsigned int *)(ptbh->tbbi.loadaddr + sizeof(struct nx_bootheader)),
+           ^
+src/iSDHCBOOT.c:1114:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+    (unsigned int *)(ptbh->tbbi.loadaddr + sizeof(struct nx_bootheader)),
+    ^
+src/iSDHCBOOT.c:1039:24: warning: unused variable 'psbh' [-Wunused-variable]
+  struct nx_bootheader *psbh = (struct nx_bootheader *)pSBI;
+                        ^
+[link.... out/bl1-avn.elf]
+[binary.... out/bl1-avn.bin]
+Finished: SUCCESS

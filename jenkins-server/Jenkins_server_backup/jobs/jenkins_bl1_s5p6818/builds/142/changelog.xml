@@ -1,0 +1,20 @@
+commit 931564d9988b8a0fadd197cceb224146c20261cb
+tree d6270b480149bcd101690a411e90892e15a1d443
+parent 27b91afa7cce47db7f4208b0ad02052256848c67
+author DeokJin Lee <truevirtue@nexell.co.kr> 2016-12-26 10:26:47 +0900
+committer DeokJin Lee <truevirtue@nexell.co.kr> 2017-01-06 10:50:37 +0900
+
+    bl1: secure manager code cleanup
+
+    This patch was secure manager clean up in the code.
+
+    Change-Id: I53b5cb6fe116117907ea7cbf9c8dbf75d9da38bc Signed-off-by:
+    DeokJin Lee <truevirtue@nexell.co.kr>
+
+
+:100644 100644 aad6137dcbd59c4f93ace037a3f162c5db37af52 646e0cd2505420ccbc5d4496e1905fed9872e4e5 M	Makefile
+:100644 000000 d4bb2f695f719353a93766c972299ef43d93ca97 0000000000000000000000000000000000000000 D	src/SecureManager.c
+:100644 100644 2dbd570bf6c193c0398aa5ee42660bb40f3e4351 7456c02b56d687a301268b1ff6dbd3aad106ca23 M	src/secondboot.c
+:000000 100644 0000000000000000000000000000000000000000 4a0c9d162586540f2774aa4f9d81a3cbab6f0038 A	src/secure_manager.c
+:100644 100644 0a5b7e95cc4e93604f649f4dd9f7cb2cdb21ad8d 2c314623c5ab29a649a04e3bf961f9f58d4b8e93 R080	src/SecureManager.h	src/secure_manager.h
+:100644 100644 3a23bc91e3a0d866e042b10bb89ba9591b6d676e f42842dad975f96074aab5be2681d5877e83cfaf M	src/subcpu.c

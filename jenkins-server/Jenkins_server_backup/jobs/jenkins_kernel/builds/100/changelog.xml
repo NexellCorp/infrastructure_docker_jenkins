@@ -1,0 +1,18 @@
+commit 2d82aa166e49d0b5c53f6c96f7bd2deabd130728
+tree 53ede01068642940a7db9aea6251f66c118f0097
+parent ec32f86a18e79b9fbf5030a2a1e3547b03b31783
+author Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 11:30:38 +0900
+committer Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 11:30:38 +0900
+
+    soc: nexell: nxs_dev: Modify set/get control routine
+
+    This patch modifies nxs_set_control, nxs_get_control. If nxs_dev driver
+    does not set set_control or get_control callback, previous code can
+    trigger kernel panic. This patch checks existence of set/get control
+    callback and call each callback.
+
+    Change-Id: I70d80642dd2f35e5222953830f1ea4dc5c1ee382 Signed-off-by:
+    Sungwoo Park <swpark@nexell.co.kr>
+
+
+:100644 100644 6a3d925821ca0691de4198c3858ed9f840e28fd4 73ff1c140ea45a0786d7770a6b9f0d1f00e94a72 M	drivers/soc/nexell/nxstream/nxs_dev.c

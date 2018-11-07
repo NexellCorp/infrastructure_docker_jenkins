@@ -1,0 +1,21 @@
+commit 2869afdef86bcec6e35ac1afb79c2d1a8fdfcb12
+tree af688de0e5e33ff4d0e961a57a4d71b27e158458
+parent af4170a412701e679400181a5e66c538b3499e90
+author DeokJin Lee <truevirtue@nexell.co.kr> 2016-12-28 16:42:33 +0900
+committer Sungwoo Park <swpark@nexell.co.kr> 2017-01-09 16:46:07 +0900
+
+    bl1: modify the crc algorithm sequence
+
+    This patch has been modified to user the crc algorithm for kernel
+    version dependencies. To support all kernel versions.
+
+    Change-Id: I2b18ad64d3809678a7d16b18f427dda66528aa2e Signed-off-by:
+    DeokJin Lee <truevirtue@nexell.co.kr>
+
+
+:100644 100644 3704fad29492a292df002a9639bb5cca1e0426c3 2056eea048b6bee3f18f7877206d38483fd3bab5 M	Makefile
+:100644 100644 6c6b7d821dc45a4ded14c85641f2da424d5cdc8f 6f35d77fd4b4535efe57a3ca72880080abf115f4 M	config.mak
+:100644 100644 dc67ebf4cbedc1abd5fed437784c900047a926fb dc15778ce5a1e233630fcaf88aad106a350851ee M	pyrope_2ndboot.lds
+:000000 100644 0000000000000000000000000000000000000000 2f2d64cd299d86730e3fdbe7cc05984a7ae8f0fe A	src/crc.c
+:100644 100644 3dd5e855aba89b5465f9302ac2b0ccfa8f117596 dab9c2b28ea752434f0ead312a1c4bfe37f61204 M	src/plat_pm.c
+:100644 100644 5d1d33b5d4586b00686c50f710b169b35acc94dd a2cdb7aae75a5d4016444d3f10c75f95e90916ea M	src/services/std_svc/psci/psci_suspend.c

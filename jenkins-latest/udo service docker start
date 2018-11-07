@@ -1,0 +1,13 @@
+[0;1;31m●[0m docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: [0;1;31mfailed[0m (Result: exit-code) since 금 2016-12-23 09:47:02 KST; 10s ago
+     Docs: https://docs.docker.com
+  Process: 30628 ExecStart=/usr/bin/dockerd -H fd:// [0;1;31m(code=exited, status=1/FAILURE)[0m
+ Main PID: 30628 (code=exited, status=1/FAILURE)
+
+12월 23 09:47:02 sukernexell systemd[1]: Starting Docker Application Container Engine...
+12월 23 09:47:02 sukernexell dockerd[30628]: time="2016-12-23T09:47:02+09:00" level=fatal msg="unable to configure the Docker daemon with file /etc/docker/daemon.json: invalid character 'j' looking for beginning of value\n"
+12월 23 09:47:02 sukernexell systemd[1]: [0;1;39mdocker.service: Main process exited, code=exited, status=1/FAILURE[0m
+12월 23 09:47:02 sukernexell systemd[1]: [0;1;31mFailed to start Docker Application Container Engine.[0m
+12월 23 09:47:02 sukernexell systemd[1]: [0;1;39mdocker.service: Unit entered failed state.[0m
+12월 23 09:47:02 sukernexell systemd[1]: [0;1;39mdocker.service: Failed with result 'exit-code'.[0m

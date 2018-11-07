@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>log-parser plugin page</title>
+		<link type="text/css" rel="stylesheet" href="http://192.168.1.248:8080/css/style.css" />
+		<link type="text/css" rel="stylesheet" href="http://192.168.1.248:8080/css/color.css" />
+	</head>
+	<body>
+<pre>Triggered by Gerrit: http://git.nexell.co.kr:8081/gerrit/1836
+Building in workspace /var/jenkins_home/workspace/jenkins_bl1_s5p4418
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+ &gt; git init /var/jenkins_home/workspace/jenkins_bl1_s5p4418 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+ &gt; git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ &gt; git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 +refs/heads/*:refs/remotes/origin/*
+ &gt; git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 # timeout=10
+ &gt; git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ &gt; git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+using GIT_ASKPASS to set credentials 
+ &gt; git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 refs/changes/36/1836/3
+ &gt; git rev-parse 2869afdef86bcec6e35ac1afb79c2d1a8fdfcb12^{commit} # timeout=10
+Checking out Revision 2869afdef86bcec6e35ac1afb79c2d1a8fdfcb12 (refs/changes/36/1836/3)
+ &gt; git config core.sparsecheckout # timeout=10
+ &gt; git checkout -f 2869afdef86bcec6e35ac1afb79c2d1a8fdfcb12
+ &gt; git rev-parse FETCH_HEAD^{commit} # timeout=10
+ &gt; git rev-list af4170a412701e679400181a5e66c538b3499e90 # timeout=10
+[jenkins_bl1_s5p4418] $ /bin/sh /tmp/hudson4942675869621718256.sh
+[compile....src/startup.S]
+[compile....src/armv7_libs.S]
+[compile....src/clockinit.c]
+[compile....src/secondboot.c]
+[compile....src/subcpu.c]
+[compile....src/plat_pm.c]
+[compile....src/ema.c]
+[compile....src/resetcon.c]
+[compile....src/GPIO.c]
+[compile....src/serial.c]
+[compile....src/util.c]
+[compile....src/crc.c]
+[compile....src/gic.c]
+[compile....src/arm_gic.c]
+[compile....src/dpc.c]
+[compile....src/buildinfo.c]
+[compile....src/printf.c]
+[compile....src/memory/init_DDR3.c]
+[compile....src/CRYPTO.c]
+[compile....src/i2c_gpio.c]
+[compile....src/pmic/pmic.c]
+[compile....src/iUSBBOOT.c]
+[compile....src/iSDHCBOOT.c]
+[link.... out/bl1-navi.elf]
+[binary.... out/bl1-navi.bin]
+</pre>	</body>
+</html>

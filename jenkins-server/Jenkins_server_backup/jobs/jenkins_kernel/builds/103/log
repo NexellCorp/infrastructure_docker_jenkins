@@ -1,0 +1,12 @@
+Manually triggered by user anonymous for Gerrit: http://git.nexell.co.kr:8081/gerrit/1937
+Building in workspace /var/jenkins_home/workspace/jenkins_kernel
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/nexell/linux/kernel/kernel-4.4.19
+ > git init /var/jenkins_home/workspace/jenkins_kernel # timeout=10
+ERROR Gerrit response: UnauthorizedFetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/linux/kernel/kernel-4.4.19
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/linux/kernel/kernel-4.4.19 +refs/heads/*:refs/remotes/origin/*

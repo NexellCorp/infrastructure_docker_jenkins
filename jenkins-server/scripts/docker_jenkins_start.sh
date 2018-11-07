@@ -1,0 +1,1 @@
+docker run --name con_jenkins --rm -v /home/jenkins/Jenkins_Storage:/var/jenkins_home -p 8080:8080 -p 50000:50000 --env JAVA_OPTS='-Dsun.jnu.encoding=UTF-8 -Dfile.encoding=UTF-8 -Duser.timezone=Asia/Seoul' nexelldocker/jenkins

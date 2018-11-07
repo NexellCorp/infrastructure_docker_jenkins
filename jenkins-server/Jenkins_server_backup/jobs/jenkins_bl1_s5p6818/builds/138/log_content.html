@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>log-parser plugin page</title>
+		<link type="text/css" rel="stylesheet" href="http://192.168.1.248:8080/css/style.css" />
+		<link type="text/css" rel="stylesheet" href="http://192.168.1.248:8080/css/color.css" />
+	</head>
+	<body>
+<pre>Triggered by Gerrit: http://git.nexell.co.kr:8081/gerrit/1775
+Building in workspace /var/jenkins_home/workspace/jenkins_bl1_s5p6818
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818
+ &gt; git init /var/jenkins_home/workspace/jenkins_bl1_s5p6818 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818
+ &gt; git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ &gt; git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 +refs/heads/*:refs/remotes/origin/*
+ &gt; git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 # timeout=10
+ &gt; git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ &gt; git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818
+using GIT_ASKPASS to set credentials 
+ &gt; git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 refs/changes/75/1775/8
+ &gt; git rev-parse 6e8bb4767d1c3bb4da17756ec3d8a7c1e9c8b2fc^{commit} # timeout=10
+Checking out Revision 6e8bb4767d1c3bb4da17756ec3d8a7c1e9c8b2fc (refs/changes/75/1775/8)
+ &gt; git config core.sparsecheckout # timeout=10
+ &gt; git checkout -f 6e8bb4767d1c3bb4da17756ec3d8a7c1e9c8b2fc
+ &gt; git rev-parse FETCH_HEAD^{commit} # timeout=10
+ &gt; git rev-list 7ba704c3ded959dbb3ba8e7c55c69d6433a1447c # timeout=10
+[jenkins_bl1_s5p6818] $ /bin/sh /tmp/hudson3221905751141951359.sh
+[compile....src/startup_aarch32.S]
+[compile....src/aarch32_libs.S]
+[compile....src/aarch32_exception_handler.c]
+[compile....src/secondboot.c]
+src/secondboot.c: In function 'BootMain':
+<a name="WARNING1"></a><span style="color:orange">src/secondboot.c:166:2: warning: implicit declaration of function 'cache_setup_ema' [-Wimplicit-function-declaration]</span>
+  cache_setup_ema();
+  ^
+<a name="WARNING2"></a><span style="color:orange">src/secondboot.c:222:2: warning: implicit declaration of function 'ema_information' [-Wimplicit-function-declaration]</span>
+  ema_information();
+  ^
+<a name="WARNING3"></a><span style="color:orange">src/secondboot.c:361:23: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]</span>
+   void (*pLaunch)() = (void (*)())(tbi-&gt;startaddr);
+                       ^
+<a name="WARNING4"></a><span style="color:orange">src/secondboot.c:152:19: warning: unused parameter 'CPUID' [-Wunused-parameter]</span>
+ void BootMain(U32 CPUID)
+                   ^
+[compile....src/subcpu.c]
+src/subcpu.c: In function 'SubCPUBringUp':
+<a name="WARNING5"></a><span style="color:orange">src/subcpu.c:136:17: warning: unused variable 'retry' [-Wunused-variable]</span>
+  S32 CPUNumber, retry = 0;
+                 ^
+<a name="WARNING6"></a><span style="color:orange">src/subcpu.c:136:6: warning: unused variable 'CPUNumber' [-Wunused-variable]</span>
+  S32 CPUNumber, retry = 0;
+      ^
+<a name="WARNING7"></a><span style="color:orange">src/subcpu.c:134:40: warning: unused variable 'pCPUStartInfo' [-Wunused-variable]</span>
+  register struct NX_SubCPUBringUpInfo *pCPUStartInfo =
+                                        ^
+[compile....src/sleep.c]
+[compile....src/resetcon.c]
+[compile....src/GPIO.c]
+[compile....src/crc.c]
+[compile....src/SecureManager.c]
+[compile....src/clockinit.c]
+[compile....src/serial.c]
+[compile....src/lib2ndboot.c]
+[compile....src/buildinfo.c]
+[compile....src/printf.c]
+[compile....src/ema.c]
+[compile....src/sysbus.c]
+[compile....src/init_DDR3.c]
+src/init_DDR3.c: In function 'ddr_gate_leveling':
+<a name="WARNING8"></a><span style="color:orange">src/init_DDR3.c:1074:2: warning: implicit declaration of function 'send_directcmd' [-Wimplicit-function-declaration]</span>
+  send_directcmd(SDRAM_CMD_PALL, 0, (SDRAM_MODE_REG)CNULL, CNULL);
+  ^
+<a name="WARNING9"></a><span style="color:orange">src/init_DDR3.c:1068:15: warning: unused variable 'status' [-Wunused-variable]</span>
+  volatile int status, response;
+               ^
+[compile....src/CRYPTO.c]
+[compile....src/i2c_gpio.c]
+[compile....src/pmic.c]
+src/pmic.c: In function 'PMIC_AVN':
+<a name="WARNING10"></a><span style="color:orange">src/pmic.c:313:2: warning: pointer targets in passing argument 3 of 'i2c_gpio_write' differ in signedness [-Wpointer-sign]</span>
+  i2c_gpio_write(I2C_ADDR_NXE2000, NXE2000_REG_DC1VOL, pData, 1);
+  ^
+src/pmic.c:129:13: note: expected 'char *' but argument is of type 'U8 *'
+ extern  int i2c_gpio_write(char dev_addr, char reg_addr, char* pdata, int length);
+             ^
+<a name="WARNING11"></a><span style="color:orange">src/pmic.c:316:2: warning: pointer targets in passing argument 3 of 'i2c_gpio_write' differ in signedness [-Wpointer-sign]</span>
+  i2c_gpio_write(I2C_ADDR_NXE2000, NXE2000_REG_DC2VOL, pData, 1);
+  ^
+src/pmic.c:129:13: note: expected 'char *' but argument is of type 'U8 *'
+ extern  int i2c_gpio_write(char dev_addr, char reg_addr, char* pdata, int length);
+             ^
+<a name="WARNING12"></a><span style="color:orange">src/pmic.c:319:2: warning: pointer targets in passing argument 3 of 'i2c_gpio_write' differ in signedness [-Wpointer-sign]</span>
+  i2c_gpio_write(I2C_ADDR_NXE2000, NXE2000_REG_DC4VOL, pData, 1);
+  ^
+src/pmic.c:129:13: note: expected 'char *' but argument is of type 'U8 *'
+ extern  int i2c_gpio_write(char dev_addr, char reg_addr, char* pdata, int length);
+             ^
+<a name="WARNING13"></a><span style="color:orange">src/pmic.c:322:2: warning: pointer targets in passing argument 3 of 'i2c_gpio_write' differ in signedness [-Wpointer-sign]</span>
+  i2c_gpio_write(I2C_ADDR_NXE2000, NXE2000_REG_DC5VOL, pData, 1);
+  ^
+src/pmic.c:129:13: note: expected 'char *' but argument is of type 'U8 *'
+ extern  int i2c_gpio_write(char dev_addr, char reg_addr, char* pdata, int length);
+             ^
+<a name="WARNING14"></a><span style="color:orange">src/pmic.c:304:6: warning: unused variable 'board_rev' [-Wunused-variable]</span>
+  U32 board_rev = 0;
+      ^
+src/pmic.c: At top level:
+<a name="WARNING15"></a><span style="color:orange">src/pmic.c:227:11: warning: 'nxe2000_get_ldo7_step' defined but not used [-Wunused-function]</span>
+ static U8 nxe2000_get_ldo7_step(int want_vol)
+           ^
+[compile....src/iUSBBOOT.c]
+src/iUSBBOOT.c: In function 'header_check':
+<a name="WARNING16"></a><span style="color:orange">src/iUSBBOOT.c:435:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]</span>
+    (U8 *)((U8 *)(tbi-&gt;loadaddr) + sizeof(*tbi));
+           ^
+src/iUSBBOOT.c: In function 'memcpy':
+<a name="WARNING17"></a><span style="color:orange">src/iUSBBOOT.c:786:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</span>
+  for (i = 0; i &lt; (cnt &gt;&gt; 2); i++)
+                ^
+<a name="WARNING18"></a><span style="color:orange">src/iUSBBOOT.c:788:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</span>
+  for (i = 0; i &lt; (cnt & 3); i++)
+                ^
+src/iUSBBOOT.c: In function 'post_process':
+<a name="WARNING19"></a><span style="color:orange">src/iUSBBOOT.c:817:9: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [enabled by default]</span>
+         tbi-&gt;dbi[0].usbbi.split_size);
+         ^
+src/iUSBBOOT.c:780:13: note: expected 'void *' but argument is of type 'uint64_t'
+ static void memcpy(void *dst, const void *src, uint32_t cnt)
+             ^
+<a name="WARNING20"></a><span style="color:orange">src/iUSBBOOT.c:821:9: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [enabled by default]</span>
+         tbi-&gt;dbi[1].usbbi.split_size);
+         ^
+src/iUSBBOOT.c:780:13: note: expected 'void *' but argument is of type 'uint64_t'
+ static void memcpy(void *dst, const void *src, uint32_t cnt)
+             ^
+src/iUSBBOOT.c: In function 'iUSBBOOT':
+<a name="WARNING21"></a><span style="color:orange">src/iUSBBOOT.c:827:21: warning: unused variable 'tbi' [-Wunused-variable]</span>
+  struct nx_tbbinfo *tbi = (struct nx_tbbinfo *)pTBI;
+                     ^
+[compile....src/iSDHCBOOT.c]
+src/iSDHCBOOT.c: In function 'SDMMCBOOT':
+<a name="WARNING22"></a><span style="color:orange">src/iSDHCBOOT.c:1079:26: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]</span>
+  unsigned int *tb_load = (unsigned int*)ptbh-&gt;tbbi.loadaddr;
+                          ^
+<a name="WARNING23"></a><span style="color:orange">src/iSDHCBOOT.c:1098:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]</span>
+  ptbh = (struct nx_bootheader *)ptbh-&gt;tbbi.loadaddr;
+         ^
+<a name="WARNING24"></a><span style="color:orange">src/iSDHCBOOT.c:1113:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]</span>
+   Decrypt((unsigned int *)(ptbh-&gt;tbbi.loadaddr + sizeof(struct nx_bootheader)),
+           ^
+<a name="WARNING25"></a><span style="color:orange">src/iSDHCBOOT.c:1114:4: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]</span>
+    (unsigned int *)(ptbh-&gt;tbbi.loadaddr + sizeof(struct nx_bootheader)),
+    ^
+<a name="WARNING26"></a><span style="color:orange">src/iSDHCBOOT.c:1039:24: warning: unused variable 'psbh' [-Wunused-variable]</span>
+  struct nx_bootheader *psbh = (struct nx_bootheader *)pSBI;
+                        ^
+[link.... out/bl1-avn.elf]
+obj/init_DDR3.o: In function `ddr_gate_leveling':
+/var/jenkins_home/workspace/jenkins_bl1_s5p6818/src/init_DDR3.c:1074: undefined reference to `send_directcmd'
+/var/jenkins_home/workspace/jenkins_bl1_s5p6818/src/init_DDR3.c:1081: undefined reference to `send_directcmd'
+/var/jenkins_home/workspace/jenkins_bl1_s5p6818/src/init_DDR3.c:1088: undefined reference to `send_directcmd'
+/var/jenkins_home/workspace/jenkins_bl1_s5p6818/src/init_DDR3.c:1126: undefined reference to `send_directcmd'
+obj/init_DDR3.o: In function `ddr_read_dq_calibration':
+/var/jenkins_home/workspace/jenkins_bl1_s5p6818/src/init_DDR3.c:1281: undefined reference to `send_directcmd'
+obj/init_DDR3.o:/var/jenkins_home/workspace/jenkins_bl1_s5p6818/src/init_DDR3.c:1288: more undefined references to `send_directcmd' follow
+<a name="ERROR1"></a><span style="color:red">collect2: error: ld returned 1 exit status</span>
+Makefile:100: recipe for target 'link' failed
+make: *** [link] Error 1
+Build step 'Execute shell' marked build as failure
+</pre>	</body>
+</html>

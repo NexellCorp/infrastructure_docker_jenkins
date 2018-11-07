@@ -1,0 +1,13 @@
+commit dda15d011091d04d4bdb69e5ab0cbddc57d25328
+tree e9941b722706dea4cbb0c0559464c0e03baec7e5
+parent 4985f970ecda8994418d058805e873e878e4ad81
+author choonghyun-Jeon <suker@nexell.co.kr> 2016-12-26 16:32:24 +0900
+committer choonghyun-Jeon <suker@nexell.co.kr> 2016-12-26 16:32:24 +0900
+
+    jenkins: test: uboot build test
+
+    Change-Id: I6338ffb34480ee9bc3e030859c860d4225e6acf8 Signed-off-by:
+    choonghyun-Jeon <suker@nexell.co.kr>
+
+
+:100644 100644 758f39064cca9a4b288733cce1a1d8c1c00ff3ee f9732acc10210d15021fb3046b4a0a286c697f8c M	drivers/core/device.c

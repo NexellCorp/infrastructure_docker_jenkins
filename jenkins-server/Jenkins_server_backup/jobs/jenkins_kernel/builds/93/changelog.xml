@@ -1,0 +1,15 @@
+commit 227c82e30a5fb42f6c2616522f3f1900d738709f
+tree a53301e8bafe01331802045b559454626f5ed88a
+parent d5d8856a32b3271f7bd8830ddf0d316f7f0762a9
+author Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 10:47:07 +0900
+committer Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 10:47:07 +0900
+
+    media: nxs_v4l2: Fix invalid double kfree of irqcallback
+
+    This patch fixes up bug that is double kfree of irqcallback.
+
+    Change-Id: Iee13c19f02615cd5f96b4a291c78f431f17d8c30 Signed-off-by:
+    Sungwoo Park <swpark@nexell.co.kr>
+
+
+:100644 100644 6d6a8238bd608ab2e2a5ec22093851c22ad88dad a136dbcaa5c353d3e874554e31f4ed1cb2359c73 M	drivers/media/platform/nexell/nxs_v4l2_builder.c

@@ -1,0 +1,960 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritUserCause plugin="gerrit-trigger@2.23.0">
+            <tEvent class="com.sonyericsson.hudson.plugins.gerrit.gerritevents.dto.events.PatchsetCreated">
+              <account>
+                <name>choonghyun-Jeon</name>
+                <email>suker@nexell.co.kr</email>
+                <username>suker</username>
+              </account>
+              <provider>
+                <name>gerrit2</name>
+                <host>git.nexell.co.kr</host>
+                <port>29418</port>
+                <scheme>ssh</scheme>
+                <url>http://git.nexell.co.kr:8081/gerrit/</url>
+                <version>2.12.2</version>
+              </provider>
+              <receivedOn>1484194863028</receivedOn>
+              <eventCreatedOn>2017-01-12 04:21:02.0 UTC</eventCreatedOn>
+              <change>
+                <project>jenkins_test/helloworld</project>
+                <branch>master</branch>
+                <id>I7f3b62fe2a0d0cc8ff5bc65fd94b57d1ced07c64</id>
+                <number>1947</number>
+                <subject>test: helloworld</subject>
+                <commitMessage>test: helloworld
+
+Change-Id: I7f3b62fe2a0d0cc8ff5bc65fd94b57d1ced07c64
+Signed-off-by: choonghyun-Jeon &lt;suker@nexell.co.kr&gt;
+</commitMessage>
+                <owner>
+                  <name>choonghyun-Jeon</name>
+                  <email>suker@nexell.co.kr</email>
+                  <username>suker</username>
+                </owner>
+                <url>http://git.nexell.co.kr:8081/gerrit/1947</url>
+              </change>
+              <patchSet>
+                <number>1</number>
+                <revision>8d0a222bc7b5a5945248a03c31f93020db5ba4f5</revision>
+                <ref>refs/changes/47/1947/1</ref>
+                <draft>false</draft>
+                <kind>REWORK</kind>
+                <uploader>
+                  <name>choonghyun-Jeon</name>
+                  <email>suker@nexell.co.kr</email>
+                  <username>suker</username>
+                </uploader>
+                <author>
+                  <name>choonghyun-Jeon</name>
+                  <email>suker@nexell.co.kr</email>
+                  <username>suker</username>
+                </author>
+                <parents>
+                  <string>36c623a6455b070b57e1a29bfc90c499116d90e0</string>
+                </parents>
+                <createdOn>2017-01-12 04:21:02.0 UTC</createdOn>
+              </patchSet>
+            </tEvent>
+            <silentMode>false</silentMode>
+            <context>
+              <event class="com.sonymobile.tools.gerrit.gerritevents.dto.events.PatchsetCreated" reference="../../tEvent"/>
+              <thisBuild>
+                <buildNumber>120</buildNumber>
+                <projectId>jenkins_helloworld</projectId>
+              </thisBuild>
+            </context>
+            <url>http://git.nexell.co.kr:8081/gerrit/1947</url>
+            <authenticationName>anonymous</authenticationName>
+          </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritUserCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.triggers.SCMTrigger_-BuildAction/>
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.BadgeAction plugin="gerrit-trigger@2.23.0">
+      <tEvent class="com.sonyericsson.hudson.plugins.gerrit.gerritevents.dto.events.PatchsetCreated" reference="../../hudson.model.CauseAction/causeBag/entry/com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritUserCause/tEvent"/>
+    </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.BadgeAction>
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.actions.RetriggerAction plugin="gerrit-trigger@2.23.0">
+      <context reference="../../hudson.model.CauseAction/causeBag/entry/com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritUserCause/context"/>
+    </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.actions.RetriggerAction>
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.actions.RetriggerAllAction plugin="gerrit-trigger@2.23.0">
+      <context reference="../../hudson.model.CauseAction/causeBag/entry/com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritUserCause/context"/>
+    </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.actions.RetriggerAllAction>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set">
+        <string>GERRIT_BRANCH</string>
+        <string>GERRIT_CHANGE_ABANDONER</string>
+        <string>GERRIT_CHANGE_ABANDONER_EMAIL</string>
+        <string>GERRIT_CHANGE_ABANDONER_NAME</string>
+        <string>GERRIT_CHANGE_COMMIT_MESSAGE</string>
+        <string>GERRIT_CHANGE_ID</string>
+        <string>GERRIT_CHANGE_NUMBER</string>
+        <string>GERRIT_CHANGE_OWNER</string>
+        <string>GERRIT_CHANGE_OWNER_EMAIL</string>
+        <string>GERRIT_CHANGE_OWNER_NAME</string>
+        <string>GERRIT_CHANGE_RESTORER</string>
+        <string>GERRIT_CHANGE_RESTORER_EMAIL</string>
+        <string>GERRIT_CHANGE_RESTORER_NAME</string>
+        <string>GERRIT_CHANGE_SUBJECT</string>
+        <string>GERRIT_CHANGE_URL</string>
+        <string>GERRIT_EVENT_ACCOUNT</string>
+        <string>GERRIT_EVENT_ACCOUNT_EMAIL</string>
+        <string>GERRIT_EVENT_ACCOUNT_NAME</string>
+        <string>GERRIT_EVENT_COMMENT_TEXT</string>
+        <string>GERRIT_EVENT_HASH</string>
+        <string>GERRIT_EVENT_TYPE</string>
+        <string>GERRIT_HOST</string>
+        <string>GERRIT_NAME</string>
+        <string>GERRIT_NEWREV</string>
+        <string>GERRIT_OLDREV</string>
+        <string>GERRIT_PATCHSET_NUMBER</string>
+        <string>GERRIT_PATCHSET_REVISION</string>
+        <string>GERRIT_PATCHSET_UPLOADER</string>
+        <string>GERRIT_PATCHSET_UPLOADER_EMAIL</string>
+        <string>GERRIT_PATCHSET_UPLOADER_NAME</string>
+        <string>GERRIT_PORT</string>
+        <string>GERRIT_PROJECT</string>
+        <string>GERRIT_REFNAME</string>
+        <string>GERRIT_REFSPEC</string>
+        <string>GERRIT_SCHEME</string>
+        <string>GERRIT_SUBMITTER</string>
+        <string>GERRIT_SUBMITTER_EMAIL</string>
+        <string>GERRIT_SUBMITTER_NAME</string>
+        <string>GERRIT_TOPIC</string>
+        <string>GERRIT_VERSION</string>
+      </safeParameters>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_EVENT_TYPE</name>
+          <value>patchset-created</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_EVENT_HASH</name>
+          <value>-1488130113</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_BRANCH</name>
+          <value>master</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_TOPIC</name>
+          <value></value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_NUMBER</name>
+          <value>1947</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_ID</name>
+          <value>I7f3b62fe2a0d0cc8ff5bc65fd94b57d1ced07c64</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PATCHSET_NUMBER</name>
+          <value>1</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PATCHSET_REVISION</name>
+          <value>8d0a222bc7b5a5945248a03c31f93020db5ba4f5</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_REFSPEC</name>
+          <value>refs/changes/47/1947/1</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PROJECT</name>
+          <value>jenkins_test/helloworld</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_SUBJECT</name>
+          <value>test: helloworld</value>
+        </hudson.model.StringParameterValue>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.parameters.Base64EncodedStringParameterValue plugin="gerrit-trigger@2.23.0">
+          <name>GERRIT_CHANGE_COMMIT_MESSAGE</name>
+          <value>dGVzdDogaGVsbG93b3JsZAoKQ2hhbmdlLUlkOiBJN2YzYjYyZmUyYTBkMGNjOGZmNWJjNjVmZDk0YjU3ZDFjZWQwN2M2NApTaWduZWQtb2ZmLWJ5OiBjaG9vbmdoeXVuLUplb24gPHN1a2VyQG5leGVsbC5jby5rcj4K</value>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.parameters.Base64EncodedStringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_URL</name>
+          <value>http://git.nexell.co.kr:8081/gerrit/1947</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_OWNER</name>
+          <value>\&quot;choonghyun-Jeon\&quot; &lt;suker@nexell.co.kr&gt;</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_OWNER_NAME</name>
+          <value>choonghyun-Jeon</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_CHANGE_OWNER_EMAIL</name>
+          <value>suker@nexell.co.kr</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PATCHSET_UPLOADER</name>
+          <value>\&quot;choonghyun-Jeon\&quot; &lt;suker@nexell.co.kr&gt;</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PATCHSET_UPLOADER_NAME</name>
+          <value>choonghyun-Jeon</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PATCHSET_UPLOADER_EMAIL</name>
+          <value>suker@nexell.co.kr</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_EVENT_ACCOUNT</name>
+          <value>\&quot;choonghyun-Jeon\&quot; &lt;suker@nexell.co.kr&gt;</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_EVENT_ACCOUNT_NAME</name>
+          <value>choonghyun-Jeon</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_EVENT_ACCOUNT_EMAIL</name>
+          <value>suker@nexell.co.kr</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_NAME</name>
+          <value>gerrit2</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_HOST</name>
+          <value>git.nexell.co.kr</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_PORT</name>
+          <value>29418</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_SCHEME</name>
+          <value>ssh</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>GERRIT_VERSION</name>
+          <value>2.12.2</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames class="empty-list"/>
+    </hudson.model.ParametersAction>
+    <hudson.plugins.git.util.BuildData plugin="git@3.0.1">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/changes/10/1810/1</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>c1a420e010a80d0b60a1070b47269881b989fc52</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/10/1810/1</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>96</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/86/1786/1</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>ae53f6fde2508f679059196d49e16fdb2eda7652</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/86/1786/1</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>84</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/14</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>3af2b3270a4f2e83e78349a5d8dc29d3f51dd23f</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/14</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>82</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/89/1789/1</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>b3ddc7201e4cb25061a0a71fd71a72bb6da8a888</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/89/1789/1</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>87</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/13</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>486b0158bad17146d3378d1eb04a5963b379fb06</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/13</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>81</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/85/1785/3</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>617afe3f53530bf6df03f126125c30905c4e5940</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/85/1785/3</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>86</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/84/1784/1</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>f1c96f652ce3bbdf712f9d7c4db4c578a4e0f567</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/84/1784/1</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>77</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/12</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>83d5330c171f8c27f7ab25c60992e4e4dd5a6c6e</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/12</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>80</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/11</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>9863bc66ad9569a04e89f09f21bbe151f3272c97</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/11</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>79</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/85/1785/1</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>53396d5a5284dcdfe54568e0c6e399c66da38e78</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/85/1785/1</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>83</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/10</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>7e6754671697720f2a5478c77e323d169b1cfb57</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/10</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>78</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/85/1785/2</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>44343cd3b42066e93bc2196e1ac9753849642e37</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/85/1785/2</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>85</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/9</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>ab26c3421503bad6f2260236ccbbbedbeaf956b9</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/9</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>76</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/7</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>d44b4053822afa25449d9fc496ff06859335eaa6</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/7</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>69</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/8</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>933c044003ed27b079dff70235c93993c91d432e</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/8</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>74</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/5</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>77ef35e8723d97447103134e3e91780f5b4bee3a</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/5</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>61</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/6</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>62f5d04fcdb83c571e76cafccebf2915669a0ab7</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/6</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>62</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/43/1743/7</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>056918b10382901d143ce8a92975d4ebf2b23b6d</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/43/1743/7</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>42</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/43/1743/8</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>e34fce89a207cf9e385a2892d9c48993a45f9179</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/43/1743/8</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>44</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/43/1743/9</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>4ed760dd3b4150f53a2848fad22a77841793f7b8</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/43/1743/9</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>46</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/3</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>7ef031216959ab92efe8e5ddebee67038458ebec</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/3</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>51</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/91/1791/3</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>6630e459407f408d0beef906c4f7a9be073681c5</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/91/1791/3</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>93</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/4</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>5a59dddff99a46dd526356d6bd676ef87df31ead</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/4</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>55</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/90/1790/1</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>3656dacfc6cd965ef14bc5d1301340ca82b2b48b</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/90/1790/1</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>88</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/1</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>734c4a4bc8d0d32bdd47977e47ddbcb5b5b0c87e</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/1</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>47</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/91/1791/1</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>3c71681a5735faebb95551344d0a1d5ab658d2bd</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/91/1791/1</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>89</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/79/1779/2</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>6a315c3a74dce1ccf3aa7592b600b5d6f7a30681</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/79/1779/2</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>48</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/91/1791/2</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>cf64d53470559d7ad1e5acb8bd9739a9f9a69913</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/91/1791/2</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>90</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/38/1838/1</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>36c8a35d048b7312e993765044a67d00351c80e4</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/38/1838/1</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>102</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/38/1838/2</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>6d616e241c8647a8711e4c0f2da2f27f354d6fc4</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/38/1838/2</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>106</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>36c623a6455b070b57e1a29bfc90c499116d90e0</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/master</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision plugin="git-client@2.2.0">
+              <sha1 reference="../../marked/sha1"/>
+              <branches class="list">
+                <hudson.plugins.git.Branch reference="../../../marked/branches/hudson.plugins.git.Branch"/>
+              </branches>
+            </revision>
+            <hudsonBuildNumber>40</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+        <entry>
+          <string>refs/changes/47/1947/1</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.2.0">
+              <sha1>8d0a222bc7b5a5945248a03c31f93020db5ba4f5</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/changes/47/1947/1</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>120</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry[32]/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>http://git.nexell.co.kr:8081/gerrit/jenkins_test/helloworld</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.plugins.git.GitTagAction plugin="git@3.0.1">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <string>refs/changes/47/1947/1</string>
+          <list/>
+        </entry>
+      </tags>
+      <ws>/var/jenkins_home/workspace/jenkins_helloworld</ws>
+    </hudson.plugins.git.GitTagAction>
+    <hudson.scm.SCMRevisionState_-None/>
+    <hudson.plugins.logparser.LogParserAction plugin="log-parser@2.0">
+      <build class="build" reference="../../.."/>
+      <result>
+        <totalErrors>0</totalErrors>
+        <totalWarnings>0</totalWarnings>
+        <totalInfos>0</totalInfos>
+        <htmlLogFile>/var/jenkins_home/jobs/jenkins_helloworld/builds/120/log_content.html</htmlLogFile>
+        <errorLinksFile>/var/jenkins_home/jobs/jenkins_helloworld/builds/120/logerrorLinks.html</errorLinksFile>
+        <warningLinksFile>/var/jenkins_home/jobs/jenkins_helloworld/builds/120/logwarningLinks.html</warningLinksFile>
+        <infoLinksFile>/var/jenkins_home/jobs/jenkins_helloworld/builds/120/loginfoLinks.html</infoLinksFile>
+        <parsedLogURL>job/jenkins_helloworld/120/parsed_console/log.html</parsedLogURL>
+        <htmlLogPath>/var/jenkins_home/jobs/jenkins_helloworld/builds/120</htmlLogPath>
+      </result>
+    </hudson.plugins.logparser.LogParserAction>
+  </actions>
+  <queueId>18</queueId>
+  <timestamp>1484197700933</timestamp>
+  <startTime>1484197700939</startTime>
+  <result>SUCCESS</result>
+  <duration>1406</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/var/jenkins_home/workspace/jenkins_helloworld</workspace>
+  <hudsonVersion>2.19.4</hudsonVersion>
+  <scm class="hudson.plugins.git.GitChangeLogParser" plugin="git@3.0.1">
+    <authorOrCommitter>false</authorOrCommitter>
+  </scm>
+  <culprits class="com.google.common.collect.RegularImmutableSortedSet">
+    <string>suker@nexell.co.kr</string>
+  </culprits>
+</build>

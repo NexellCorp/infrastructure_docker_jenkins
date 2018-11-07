@@ -1,0 +1,198 @@
+Triggered by Gerrit: http://git.nexell.co.kr:8081/gerrit/1833
+Building in workspace /var/jenkins_home/workspace/jenkins_bl1_s5p6818
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818
+ > git init /var/jenkins_home/workspace/jenkins_bl1_s5p6818 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818 refs/changes/33/1833/5
+ > git rev-parse 58d193ccacc2d8d7f6c7230147a4aaaa9c6f2f78^{commit} # timeout=10
+Checking out Revision 58d193ccacc2d8d7f6c7230147a4aaaa9c6f2f78 (refs/changes/33/1833/5)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 58d193ccacc2d8d7f6c7230147a4aaaa9c6f2f78
+ > git rev-parse FETCH_HEAD^{commit} # timeout=10
+ > git rev-list cf1277ded96b0a19b44025c0ac7a39b86ce1d967 # timeout=10
+[jenkins_bl1_s5p6818] $ /bin/sh /tmp/hudson1329435720819106480.sh
+[compile....src/startup_aarch32.S]
+[compile....src/aarch32_libs.S]
+[compile....src/aarch32_exception_handler.c]
+[compile....src/plat_pm.c]
+src/plat_pm.c: In function 'suspend_mark':
+src/plat_pm.c:42:32: warning: unused parameter 'state' [-Wunused-parameter]
+ void suspend_mark(unsigned int state, unsigned int entrypoint, unsigned int crc,
+                                ^
+[compile....src/sub_cpu.c]
+[compile....src/devices/clock.c]
+[compile....src/devices/cci400.c]
+[compile....src/devices/resetcon.c]
+[compile....src/devices/GPIO.c]
+[compile....src/secure_manager.c]
+[compile....src/lib2ndboot.c]
+[compile....src/build_info.c]
+[compile....src/devices/serial.c]
+[compile....src/printf.c]
+[compile....src/crc.c]
+[compile....src/devices/ema.c]
+[compile....src/main.c]
+src/main.c: In function 'main':
+src/main.c:116:50: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]
+   WARN("NSIH Version(or File) Mismatch...!!\r\n");
+                                                  ^
+src/main.c:189:64: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]
+   ERROR("2nd boot header is invalid, please check it out!\r\n");
+                                                                ^
+src/main.c: At top level:
+src/main.c:62:13: warning: 's5p6818_set_device_env' defined but not used [-Wunused-function]
+ static void s5p6818_set_device_env(void)
+             ^
+[compile....src/devices/sysbus.c]
+[compile....src/devices/memory/ddr3_sdram.c]
+src/devices/memory/ddr3_sdram.c: In function 'hw_write_leveling_information':
+src/devices/memory/ddr3_sdram.c:450:6: warning: variable 'wl_dll_value' set but not used [-Wunused-but-set-variable]
+  int wl_dll_value[4];
+      ^
+src/devices/memory/ddr3_sdram.c: In function 'gate_leveling_information':
+src/devices/memory/ddr3_sdram.c:599:54: warning: variable 'lock_value' set but not used [-Wunused-but-set-variable]
+  unsigned int status, gate_center[4], gate_cycle[4], lock_value;
+                                                      ^
+src/devices/memory/ddr3_sdram.c:599:39: warning: variable 'gate_cycle' set but not used [-Wunused-but-set-variable]
+  unsigned int status, gate_center[4], gate_cycle[4], lock_value;
+                                       ^
+src/devices/memory/ddr3_sdram.c:599:23: warning: variable 'gate_center' set but not used [-Wunused-but-set-variable]
+  unsigned int status, gate_center[4], gate_cycle[4], lock_value;
+                       ^
+src/devices/memory/ddr3_sdram.c:599:15: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+  unsigned int status, gate_center[4], gate_cycle[4], lock_value;
+               ^
+src/devices/memory/ddr3_sdram.c: In function 'ddr_gate_leveling':
+src/devices/memory/ddr3_sdram.c:654:15: warning: unused variable 'status' [-Wunused-variable]
+  volatile int status, response;
+               ^
+src/devices/memory/ddr3_sdram.c: In function 'read_dq_calibration_information':
+src/devices/memory/ddr3_sdram.c:802:16: warning: variable 'range' set but not used [-Wunused-but-set-variable]
+   unsigned int range;
+                ^
+src/devices/memory/ddr3_sdram.c:728:15: warning: variable 'vwmc' set but not used [-Wunused-but-set-variable]
+  unsigned int vwmc[4];
+               ^
+src/devices/memory/ddr3_sdram.c: In function 'write_latency_information':
+src/devices/memory/ddr3_sdram.c:933:24: warning: variable 'latency_plus' set but not used [-Wunused-but-set-variable]
+  unsigned int latency, latency_plus;
+                        ^
+src/devices/memory/ddr3_sdram.c:933:15: warning: variable 'latency' set but not used [-Wunused-but-set-variable]
+  unsigned int latency, latency_plus;
+               ^
+src/devices/memory/ddr3_sdram.c: In function 'ddr_write_latency_calibration':
+src/devices/memory/ddr3_sdram.c:976:15: warning: unused variable 'bank' [-Wunused-variable]
+  volatile int bank = 0, row = 0, column = 0;
+               ^
+src/devices/memory/ddr3_sdram.c: In function 'write_dq_calibration_information':
+src/devices/memory/ddr3_sdram.c:1138:16: warning: variable 'range' set but not used [-Wunused-but-set-variable]
+   unsigned int range;
+                ^
+src/devices/memory/ddr3_sdram.c:1064:15: warning: variable 'vwmc' set but not used [-Wunused-but-set-variable]
+  unsigned int vwmc[4];
+               ^
+[compile....src/devices/CRYPTO.c]
+[compile....src/devices/i2c_gpio.c]
+[compile....src/devices/pmic/pmic.c]
+src/devices/pmic/pmic.c: In function 'PMIC_AVN':
+src/devices/pmic/pmic.c:313:2: warning: pointer targets in passing argument 3 of 'i2c_gpio_write' differ in signedness [-Wpointer-sign]
+  i2c_gpio_write(I2C_ADDR_NXE2000, NXE2000_REG_DC1VOL, pData, 1);
+  ^
+src/devices/pmic/pmic.c:129:13: note: expected 'char *' but argument is of type 'U8 *'
+ extern  int i2c_gpio_write(char dev_addr, char reg_addr, char* pdata, int length);
+             ^
+src/devices/pmic/pmic.c:316:2: warning: pointer targets in passing argument 3 of 'i2c_gpio_write' differ in signedness [-Wpointer-sign]
+  i2c_gpio_write(I2C_ADDR_NXE2000, NXE2000_REG_DC2VOL, pData, 1);
+  ^
+src/devices/pmic/pmic.c:129:13: note: expected 'char *' but argument is of type 'U8 *'
+ extern  int i2c_gpio_write(char dev_addr, char reg_addr, char* pdata, int length);
+             ^
+src/devices/pmic/pmic.c:319:2: warning: pointer targets in passing argument 3 of 'i2c_gpio_write' differ in signedness [-Wpointer-sign]
+  i2c_gpio_write(I2C_ADDR_NXE2000, NXE2000_REG_DC4VOL, pData, 1);
+  ^
+src/devices/pmic/pmic.c:129:13: note: expected 'char *' but argument is of type 'U8 *'
+ extern  int i2c_gpio_write(char dev_addr, char reg_addr, char* pdata, int length);
+             ^
+src/devices/pmic/pmic.c:322:2: warning: pointer targets in passing argument 3 of 'i2c_gpio_write' differ in signedness [-Wpointer-sign]
+  i2c_gpio_write(I2C_ADDR_NXE2000, NXE2000_REG_DC5VOL, pData, 1);
+  ^
+src/devices/pmic/pmic.c:129:13: note: expected 'char *' but argument is of type 'U8 *'
+ extern  int i2c_gpio_write(char dev_addr, char reg_addr, char* pdata, int length);
+             ^
+src/devices/pmic/pmic.c:304:6: warning: unused variable 'board_rev' [-Wunused-variable]
+  U32 board_rev = 0;
+      ^
+src/devices/pmic/pmic.c: At top level:
+src/devices/pmic/pmic.c:227:11: warning: 'nxe2000_get_ldo7_step' defined but not used [-Wunused-function]
+ static U8 nxe2000_get_ldo7_step(int want_vol)
+           ^
+[compile....src/boot/iUSBBOOT.c]
+src/boot/iUSBBOOT.c: In function 'header_check':
+src/boot/iUSBBOOT.c:435:11: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+    (U8 *)((U8 *)(tbi->loadaddr) + sizeof(*tbi));
+           ^
+src/boot/iUSBBOOT.c: In function 'nx_usb_int_bulkout':
+src/boot/iUSBBOOT.c:460:25: warning: unused variable 'ptbh' [-Wunused-variable]
+   struct nx_bootheader *ptbh = (struct nx_bootheader *)pTBI;
+                         ^
+src/boot/iUSBBOOT.c: In function 'memcpy':
+src/boot/iUSBBOOT.c:786:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < (cnt >> 2); i++)
+                ^
+src/boot/iUSBBOOT.c:788:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i = 0; i < (cnt & 3); i++)
+                ^
+src/boot/iUSBBOOT.c: In function 'post_process':
+src/boot/iUSBBOOT.c:817:9: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [enabled by default]
+         tbi->dbi[0].usbbi.split_size);
+         ^
+src/boot/iUSBBOOT.c:780:13: note: expected 'void *' but argument is of type 'uint64_t'
+ static void memcpy(void *dst, const void *src, uint32_t cnt)
+             ^
+src/boot/iUSBBOOT.c:821:9: warning: passing argument 1 of 'memcpy' makes pointer from integer without a cast [enabled by default]
+         tbi->dbi[1].usbbi.split_size);
+         ^
+src/boot/iUSBBOOT.c:780:13: note: expected 'void *' but argument is of type 'uint64_t'
+ static void memcpy(void *dst, const void *src, uint32_t cnt)
+             ^
+src/boot/iUSBBOOT.c: In function 'iUSBBOOT':
+src/boot/iUSBBOOT.c:827:21: warning: unused variable 'tbi' [-Wunused-variable]
+  struct nx_tbbinfo *tbi = (struct nx_tbbinfo *)pTBI;
+                     ^
+src/boot/iUSBBOOT.c: At top level:
+src/boot/iUSBBOOT.c:192:21: warning: 'g_fcs' defined but not used [-Wunused-variable]
+ static unsigned int g_fcs = 0;
+                     ^
+src/boot/iUSBBOOT.c:424:13: warning: 'header_check' defined but not used [-Wunused-function]
+ static void header_check(USBBOOTSTATUS *pUSBBootStatus, struct nx_bootheader *ptbh)
+             ^
+[compile....src/boot/iSDHCBOOT.c]
+src/boot/iSDHCBOOT.c: In function 'NX_SDMMC_GetClkParam':
+src/boot/iSDHCBOOT.c:72:5: warning: implicit declaration of function 'clkpwr_get_pllfreq' [-Wimplicit-function-declaration]
+     srcFreq = clkpwr_get_pllfreq(pClkInfo->nPllNum);
+     ^
+src/boot/iSDHCBOOT.c: In function 'SDMMCBOOT':
+src/boot/iSDHCBOOT.c:1039:24: warning: unused variable 'psbh' [-Wunused-variable]
+  struct nx_bootheader *psbh = (struct nx_bootheader *)pSBI;
+                        ^
+src/boot/iSDHCBOOT.c:1038:24: warning: unused variable 'ptbh' [-Wunused-variable]
+  struct nx_bootheader *ptbh = (struct nx_bootheader *)pTBI;
+                        ^
+[link.... out/bl1-avn.elf]
+collect2: error: ld terminated with signal 15 [Terminated]
+Makefile:140: recipe for target 'link' failed
+make: *** [link] Error 1
+Build was aborted
+Finished: ABORTED

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>log-parser plugin page</title>
+		<link type="text/css" rel="stylesheet" href="http://192.168.1.248:8080/css/style.css" />
+		<link type="text/css" rel="stylesheet" href="http://192.168.1.248:8080/css/color.css" />
+	</head>
+	<body>
+<script type="text/javascript">
+	function toggleList(list){
+		element = document.getElementById(list).style;
+		element.display == 'none' ? element.display='block' : element.display='none';
+	}
+</script>
+<img src="http://192.168.1.248:8080///static/ac7f1721/images/16x16/red.gif" style="margin: 2px;" width="24" alt="Error Icon" height="24" />
+<a href="javascript:toggleList('Error')" target="_self"><STRONG>Error (0)</STRONG></a><br />
+<ul id="Error" style="display:none; margin-left:0; padding-left:3em">
+</ul>
+<img src="http://192.168.1.248:8080///static/ac7f1721/images/16x16/yellow.gif" style="margin: 2px;" width="24" alt="Warning Icon" height="24" />
+<a href="javascript:toggleList('Warning')" target="_self"><STRONG>Warning (2)</STRONG></a><br />
+<ul id="Warning" style="display:none; margin-left:0; padding-left:3em">
+ <a target="content" href="log_content.html">Beginning of log</a>
+<br/>(2 Warnings in this section)<br/>
+<li>1 <a target="content" href="log_content.html#WARNING1"><span style="color:orange">src/secondboot.c:236:64: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]</span></a></li><br/>
+<li>2 <a target="content" href="log_content.html#WARNING2"><span style="color:orange">src/services/smc_handler.c:73:59: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]</span></a></li><br/>
+</ul>
+<img src="http://192.168.1.248:8080///static/ac7f1721/images/16x16/blue.gif" style="margin: 2px;" width="24" alt="Info Icon" height="24" />
+<a href="javascript:toggleList('Info')" target="_self"><STRONG>Info (0)</STRONG></a><br />
+<ul id="Info" style="display:none; margin-left:0; padding-left:3em">
+</ul>
+	</body>
+</html>

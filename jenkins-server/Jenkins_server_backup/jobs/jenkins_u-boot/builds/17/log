@@ -1,0 +1,87 @@
+Retriggered by user anonymous for Gerrit: http://git.nexell.co.kr:8081/gerrit/1803
+Building in workspace /var/jenkins_home/workspace/jenkins_u-boot
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01
+ > git init /var/jenkins_home/workspace/jenkins_u-boot # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01
+ > git --version # timeout=10
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01 +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01 # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01 refs/changes/03/1803/1
+ > git rev-parse dda15d011091d04d4bdb69e5ab0cbddc57d25328^{commit} # timeout=10
+Checking out Revision dda15d011091d04d4bdb69e5ab0cbddc57d25328 (refs/changes/03/1803/1)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f dda15d011091d04d4bdb69e5ab0cbddc57d25328
+ > git rev-parse FETCH_HEAD^{commit} # timeout=10
+ > git rev-list 4985f970ecda8994418d058805e873e878e4ad81 # timeout=10
+[jenkins_u-boot] $ /bin/sh /tmp/hudson4177883545645451451.sh
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/kconfig/conf.o
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/zconf.lex.c
+  SHIPPED scripts/kconfig/zconf.hash.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+#
+# configuration written to .config
+#
+make: arm-cortex_a9-linux-gnueabi-gcc: Command not found
+/bin/sh: 1: arm-cortex_a9-linux-gnueabi-gcc: not found
+dirname: missing operand
+Try 'dirname --help' for more information.
+scripts/kconfig/conf  --silentoldconfig Kconfig
+  CHK     include/config.h
+  UPD     include/config.h
+  GEN     include/autoconf.mk
+/bin/sh: 1: arm-cortex_a9-linux-gnueabi-gcc: not found
+  GEN     include/autoconf.mk.dep
+/bin/sh: 1: arm-cortex_a9-linux-gnueabi-gcc: not found
+scripts/Makefile.autoconf:72: recipe for target 'include/autoconf.mk' failed
+make[1]: *** [include/autoconf.mk] Error 1
+make[1]: *** Waiting for unfinished jobs....
+scripts/Makefile.autoconf:47: recipe for target 'include/autoconf.mk.dep' failed
+make[1]: *** [include/autoconf.mk.dep] Error 1
+make: *** No rule to make target 'include/config/auto.conf', needed by 'include/config/uboot.release'.  Stop.
+Build step 'Execute shell' marked build as failure
+Sending e-mails to: jenkins@nexell.co.kr
+ERROR: Could not connect to SMTP host: localhost, port: 25
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjavax.mail.MessagingException: Could not connect to SMTP host: localhost, port: 25;
+  nested exception is:
+	java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:1934)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:638)
+	at javax.mail.Service.connect(Service.java:295)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at hudson.tasks.MailSender.run(MailSender.java:129)
+	at hudson.tasks.Mailer.perform(Mailer.java:170)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:78)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:720)
+	at hudson.model.Build$BuildExecution.post2(Build.java:185)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:665)
+	at hudson.model.Run.execute(Run.java:1745)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:404)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:286)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:231)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:1900)
+	... 18 more
+Finished: FAILURE

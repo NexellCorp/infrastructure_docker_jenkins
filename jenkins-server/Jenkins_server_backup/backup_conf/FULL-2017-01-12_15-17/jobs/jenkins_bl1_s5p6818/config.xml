@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>jenkins bl1 build&#xd;
+nexell branch </description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>2</daysToKeep>
+        <numToKeep>10</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <refspec>$GERRIT_REFSPEC</refspec>
+        <url>http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p6818</url>
+        <credentialsId>a65f1672-67c1-4c15-9d14-fad5754689af</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/nexell</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.BuildChooserSetting>
+        <buildChooser class="com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTriggerBuildChooser" plugin="gerrit-trigger@2.23.0">
+          <separator>#</separator>
+        </buildChooser>
+      </hudson.plugins.git.extensions.impl.BuildChooserSetting>
+      <hudson.plugins.git.extensions.impl.WipeWorkspace/>
+    </extensions>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger plugin="gerrit-trigger@2.23.0">
+      <spec></spec>
+      <gerritProjects>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
+          <compareType>PLAIN</compareType>
+          <pattern>nexell/bl1/bl1-s5p6818</pattern>
+          <branches>
+            <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.Branch>
+              <compareType>ANT</compareType>
+              <pattern>**</pattern>
+            </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.Branch>
+          </branches>
+          <disableStrictForbiddenFileVerification>false</disableStrictForbiddenFileVerification>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
+      </gerritProjects>
+      <skipVote>
+        <onSuccessful>false</onSuccessful>
+        <onFailed>false</onFailed>
+        <onUnstable>false</onUnstable>
+        <onNotBuilt>false</onNotBuilt>
+      </skipVote>
+      <silentMode>false</silentMode>
+      <notificationLevel></notificationLevel>
+      <silentStartMode>false</silentStartMode>
+      <escapeQuotes>true</escapeQuotes>
+      <nameAndEmailParameterMode>PLAIN</nameAndEmailParameterMode>
+      <dependencyJobsNames></dependencyJobsNames>
+      <commitMessageParameterMode>BASE64</commitMessageParameterMode>
+      <changeSubjectParameterMode>PLAIN</changeSubjectParameterMode>
+      <commentTextParameterMode>BASE64</commentTextParameterMode>
+      <buildStartMessage></buildStartMessage>
+      <buildFailureMessage></buildFailureMessage>
+      <buildSuccessfulMessage></buildSuccessfulMessage>
+      <buildUnstableMessage></buildUnstableMessage>
+      <buildNotBuiltMessage></buildNotBuiltMessage>
+      <buildUnsuccessfulFilepath></buildUnsuccessfulFilepath>
+      <customUrl></customUrl>
+      <serverName>gerrit2</serverName>
+      <triggerOnEvents>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
+          <excludeDrafts>true</excludeDrafts>
+          <excludeTrivialRebase>false</excludeTrivialRebase>
+          <excludeNoCodeChange>false</excludeNoCodeChange>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginDraftPublishedEvent/>
+      </triggerOnEvents>
+      <dynamicTriggerConfiguration>false</dynamicTriggerConfiguration>
+      <triggerConfigURL></triggerConfigURL>
+      <triggerInformationAction/>
+    </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/sh
+#s5p6818-avn-ref
+make clean
+make BOARD=&quot;AVN&quot;
+
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.plugins.logparser.LogParserPublisher plugin="log-parser@2.0">
+      <unstableOnWarning>false</unstableOnWarning>
+      <failBuildOnError>true</failBuildOnError>
+      <showGraphs>true</showGraphs>
+      <parsingRulesPath>/var/jenkins_home/build_rule/build.rules</parsingRulesPath>
+      <useProjectRule>false</useProjectRule>
+    </hudson.plugins.logparser.LogParserPublisher>
+    <hudson.tasks.Mailer plugin="mailer@1.18">
+      <recipients>jenkins@nexell.co.kr</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.32">
+      <deleteDirs>true</deleteDirs>
+      <cleanupParameter></cleanupParameter>
+      <externalDelete></externalDelete>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+  </buildWrappers>
+</project>

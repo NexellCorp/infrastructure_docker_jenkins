@@ -1,0 +1,13 @@
+commit 4985f970ecda8994418d058805e873e878e4ad81
+tree 06a1c71876c9cadbc53ea1a8074e0159dbdbba0e
+parent 91e07e9c3384a7e125099006b8f9628c45e68305
+author choonghyun-Jeon <suker@nexell.co.kr> 2016-12-23 15:26:40 +0900
+committer choonghyun-Jeon <suker@nexell.co.kr> 2016-12-23 15:26:40 +0900
+
+    jenkins: test: should not merge!
+
+    Change-Id: I977d5ffe241aa5387910419654ce4099973ef84c Signed-off-by:
+    choonghyun-Jeon <suker@nexell.co.kr>
+
+
+:100644 100644 100de92eab59fc7e6a96e96005ac2fca9f67be0d 4f8f45c171a21fda4effe4363c3941b6605f6039 M	Makefile

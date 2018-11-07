@@ -1,0 +1,26 @@
+commit 6e8bb4767d1c3bb4da17756ec3d8a7c1e9c8b2fc
+tree 4d3194c8a29be7bf60888a573501e8d50295d434
+parent 7ba704c3ded959dbb3ba8e7c55c69d6433a1447c
+author DeokJin Lee <truevirtue@nexell.co.kr> 2016-12-23 16:37:24 +0900
+committer DeokJin Lee <truevirtue@nexell.co.kr> 2017-01-06 10:50:37 +0900
+
+    bl1: modify the read dq calibration sequence
+
+    This patch modified read dq calibration sequence.
+
+     [Fixed]
+     - Since 2CS is not supported, the code has been
+       modified to operate only on chip0.
+     - code clean up.
+
+    Depends-On: I4a3dc943ccfe94cb4d46aff7f07e0ce37939f303 Depends-On:
+    I58bb421f0ba282c4f33c2eed3ace87c8817e3808 Depends-On:
+    I5f9d2343a7b5cfad38f7e07a9c4a2b363fac17c3 Depends-On:
+    I21015e6da1a01f6c857a9c1ff9c3607740316853 Depends-On:
+    I2fd024e1669ddf6b70c351871dc2fab31461eebf
+
+    Change-Id: I5f9d2343a7b5cfad38f7e07a9c4a2b363fac17c3 Signed-off-by:
+    DeokJin Lee <truevirtue@nexell.co.kr>
+
+
+:100644 100644 febaf97dbe91c84cb61d65d378234dd9bf13f15a 7d2cc9b37bd575ff8dd95d4548d7a8e01cf4b393 M	src/init_DDR3.c

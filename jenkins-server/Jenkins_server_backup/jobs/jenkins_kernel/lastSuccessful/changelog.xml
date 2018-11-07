@@ -1,0 +1,18 @@
+commit d165a1d7c350f97df1cc4f35cd67aab4ca6c5345
+tree ca70359bf2cd66e7c6d1dc82840f226350c6f9e0
+parent 227c82e30a5fb42f6c2616522f3f1900d738709f
+author Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 11:18:11 +0900
+committer Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 11:18:11 +0900
+
+    soc: nexell: nxs_dev: Add NXS_CONTROL_STATUS
+
+    This patch adds new nxs_control_type named NXS_CONTROL_STATUS. 
+    NXS_CONTROL_STATUS is needed to get specific status of each nxs_dev like 
+    hdmi connection status etc. Also, status field is added to nxs_control
+    structure.
+
+    Change-Id: I77aeed37a617d8873c73477a037e4ee00edecd5e Signed-off-by:
+    Sungwoo Park <swpark@nexell.co.kr>
+
+
+:100644 100644 da6c3ea58886bf4205706efd0a8023e51f5bc21e e67712504b1fac10b324d2b8dcd9a24145806745 M	include/linux/soc/nexell/nxs_dev.h

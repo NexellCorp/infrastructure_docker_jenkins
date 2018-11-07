@@ -1,0 +1,56 @@
+Triggered by Gerrit: http://git.nexell.co.kr:8081/gerrit/1845
+Building in workspace /var/jenkins_home/workspace/jenkins_bl1_s5p4418
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+ > git init /var/jenkins_home/workspace/jenkins_bl1_s5p4418 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 refs/changes/45/1845/3
+ > git rev-parse 806403406050661f628de3443be23728013e3a48^{commit} # timeout=10
+Checking out Revision 806403406050661f628de3443be23728013e3a48 (refs/changes/45/1845/3)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 806403406050661f628de3443be23728013e3a48
+ > git rev-parse FETCH_HEAD^{commit} # timeout=10
+ > git rev-list 2869afdef86bcec6e35ac1afb79c2d1a8fdfcb12 # timeout=10
+[jenkins_bl1_s5p4418] $ /bin/sh /tmp/hudson5426093904441924629.sh
+[compile....src/startup.S]
+[compile....src/armv7_libs.S]
+[compile....src/devices/clockinit.c]
+[compile....src/main.c]
+src/main.c: In function 'main':
+src/main.c:87:2: warning: implicit declaration of function 's5p4418_resume_check' [-Wimplicit-function-declaration]
+  is_resume = s5p4418_resume_check();
+  ^
+[compile....src/subcpu.c]
+[compile....src/plat_pm.c]
+[compile....src/devices/ema.c]
+[compile....src/devices/resetcon.c]
+[compile....src/devices/GPIO.c]
+[compile....src/devices/serial.c]
+[compile....src/util.c]
+[compile....src/crc.c]
+[compile....src/devices/gic.c]
+[compile....src/arm_gic.c]
+[compile....src/devices/dpc.c]
+[compile....src/buildinfo.c]
+[compile....src/printf.c]
+[compile....src/nxp4330.c]
+[compile....src/devices/memory/init_DDR3.c]
+[compile....src/devices/CRYPTO.c]
+[compile....src/devices/i2c_gpio.c]
+[compile....src/devices/pmic/pmic.c]
+[compile....src/boot/iUSBBOOT.c]
+[compile....src/boot/iSDHCBOOT.c]
+[link.... out/bl1-navi.elf]
+[binary.... out/bl1-navi.bin]
+Finished: SUCCESS

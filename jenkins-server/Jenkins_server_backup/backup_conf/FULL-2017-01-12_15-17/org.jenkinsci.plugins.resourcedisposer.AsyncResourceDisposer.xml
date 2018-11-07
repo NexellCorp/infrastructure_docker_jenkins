@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer plugin="resource-disposer@0.3">
+  <id>AsyncResourceDisposer</id>
+  <backlog class="java.util.Collections$SetFromMap" serialization="custom">
+    <unserializable-parents/>
+    <java.util.Collections_-SetFromMap>
+      <default>
+        <m class="concurrent-hash-map">
+          <entry>
+            <org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+              <disposer reference="../../../../../../.."/>
+              <disposable class="hudson.plugins.ws_cleanup.Wipeout$DisposableImpl" plugin="ws-cleanup@0.32">
+                <node></node>
+                <path>/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484017364373</path>
+              </disposable>
+              <registered>2017-01-10 03:02:44.373 UTC</registered>
+              <lastState class="org.jenkinsci.plugins.resourcedisposer.Disposable$State$Thrown">
+                <displayName>Unable to delete &apos;/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484017364373/yocto/build-s5p4418-navi-ref-tiny/tmp/work/cortexa9hf-neon-poky-linux-gnueabi/bash-completion/2.1-r0/bash-completion-2.1/test/fixtures/_filedir&apos;. Tried 3 times (of a maximum of 3) waiting 0.1 sec between attempts.</displayName>
+                <cause class="java.io.IOException">
+                  <detailMessage>Unable to delete &apos;/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484017364373/yocto/build-s5p4418-navi-ref-tiny/tmp/work/cortexa9hf-neon-poky-linux-gnueabi/bash-completion/2.1-r0/bash-completion-2.1/test/fixtures/_filedir&apos;. Tried 3 times (of a maximum of 3) waiting 0.1 sec between attempts.</detailMessage>
+                  <cause class="java.nio.file.DirectoryNotEmptyException">
+                    <stackTrace>
+                      <trace>sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:242)</trace>
+                      <trace>sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:108)</trace>
+                      <trace>java.nio.file.Files.deleteIfExists(Files.java:1165)</trace>
+                      <trace>hudson.Util.tryOnceDeleteFile(Util.java:290)</trace>
+                      <trace>hudson.Util.deleteFile(Util.java:246)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1231)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.access$1000(FilePath.java:195)</trace>
+                      <trace>hudson.FilePath$14.invoke(FilePath.java:1201)</trace>
+                      <trace>hudson.FilePath$14.invoke(FilePath.java:1198)</trace>
+                      <trace>hudson.FilePath.act(FilePath.java:1018)</trace>
+                      <trace>hudson.FilePath.act(FilePath.java:996)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1198)</trace>
+                      <trace>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl.dispose(Wipeout.java:110)</trace>
+                      <trace>org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer$WorkItem.run(AsyncResourceDisposer.java:254)</trace>
+                      <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+                      <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+                      <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+                      <trace>java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)</trace>
+                      <trace>java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)</trace>
+                      <trace>java.lang.Thread.run(Thread.java:745)</trace>
+                    </stackTrace>
+                    <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" resolves-to="java.util.Collections$UnmodifiableList">
+                      <c class="list"/>
+                      <list reference="../c"/>
+                    </suppressedExceptions>
+                    <file>/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484017364373/yocto/build-s5p4418-navi-ref-tiny/tmp/work/cortexa9hf-neon-poky-linux-gnueabi/bash-completion/2.1-r0/bash-completion-2.1/test/fixtures/_filedir</file>
+                  </cause>
+                  <stackTrace>
+                    <trace>hudson.Util.deleteFile(Util.java:251)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1231)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.access$1000(FilePath.java:195)</trace>
+                    <trace>hudson.FilePath$14.invoke(FilePath.java:1201)</trace>
+                    <trace>hudson.FilePath$14.invoke(FilePath.java:1198)</trace>
+                    <trace>hudson.FilePath.act(FilePath.java:1018)</trace>
+                    <trace>hudson.FilePath.act(FilePath.java:996)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1198)</trace>
+                    <trace>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl.dispose(Wipeout.java:110)</trace>
+                    <trace>org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer$WorkItem.run(AsyncResourceDisposer.java:254)</trace>
+                    <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+                    <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+                    <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+                    <trace>java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)</trace>
+                    <trace>java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)</trace>
+                    <trace>java.lang.Thread.run(Thread.java:745)</trace>
+                  </stackTrace>
+                  <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" reference="../cause/suppressedExceptions"/>
+                </cause>
+              </lastState>
+            </org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+              <disposer reference="../../../../../../.."/>
+              <disposable class="hudson.plugins.ws_cleanup.Wipeout$DisposableImpl" plugin="ws-cleanup@0.32">
+                <node></node>
+                <path>/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484015360303</path>
+              </disposable>
+              <registered>2017-01-10 02:29:20.303 UTC</registered>
+              <lastState class="org.jenkinsci.plugins.resourcedisposer.Disposable$State$Thrown">
+                <displayName>Unable to delete &apos;/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484015360303/yocto/build-s5p4418-navi-ref-tiny/tmp/work/cortexa9hf-neon-poky-linux-gnueabi/bash-completion/2.1-r0/bash-completion-2.1/test/fixtures/_filedir&apos;. Tried 3 times (of a maximum of 3) waiting 0.1 sec between attempts.</displayName>
+                <cause class="java.io.IOException">
+                  <detailMessage>Unable to delete &apos;/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484015360303/yocto/build-s5p4418-navi-ref-tiny/tmp/work/cortexa9hf-neon-poky-linux-gnueabi/bash-completion/2.1-r0/bash-completion-2.1/test/fixtures/_filedir&apos;. Tried 3 times (of a maximum of 3) waiting 0.1 sec between attempts.</detailMessage>
+                  <cause class="java.nio.file.DirectoryNotEmptyException">
+                    <stackTrace>
+                      <trace>sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:242)</trace>
+                      <trace>sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:108)</trace>
+                      <trace>java.nio.file.Files.deleteIfExists(Files.java:1165)</trace>
+                      <trace>hudson.Util.tryOnceDeleteFile(Util.java:290)</trace>
+                      <trace>hudson.Util.deleteFile(Util.java:246)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1231)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.access$1000(FilePath.java:195)</trace>
+                      <trace>hudson.FilePath$14.invoke(FilePath.java:1201)</trace>
+                      <trace>hudson.FilePath$14.invoke(FilePath.java:1198)</trace>
+                      <trace>hudson.FilePath.act(FilePath.java:1018)</trace>
+                      <trace>hudson.FilePath.act(FilePath.java:996)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1198)</trace>
+                      <trace>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl.dispose(Wipeout.java:110)</trace>
+                      <trace>org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer$WorkItem.run(AsyncResourceDisposer.java:254)</trace>
+                      <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+                      <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+                      <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+                      <trace>java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)</trace>
+                      <trace>java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)</trace>
+                      <trace>java.lang.Thread.run(Thread.java:745)</trace>
+                    </stackTrace>
+                    <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" reference="../../../../../../entry/org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem/lastState/cause/cause/suppressedExceptions"/>
+                    <file>/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484015360303/yocto/build-s5p4418-navi-ref-tiny/tmp/work/cortexa9hf-neon-poky-linux-gnueabi/bash-completion/2.1-r0/bash-completion-2.1/test/fixtures/_filedir</file>
+                  </cause>
+                  <stackTrace>
+                    <trace>hudson.Util.deleteFile(Util.java:251)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1231)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.access$1000(FilePath.java:195)</trace>
+                    <trace>hudson.FilePath$14.invoke(FilePath.java:1201)</trace>
+                    <trace>hudson.FilePath$14.invoke(FilePath.java:1198)</trace>
+                    <trace>hudson.FilePath.act(FilePath.java:1018)</trace>
+                    <trace>hudson.FilePath.act(FilePath.java:996)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1198)</trace>
+                    <trace>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl.dispose(Wipeout.java:110)</trace>
+                    <trace>org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer$WorkItem.run(AsyncResourceDisposer.java:254)</trace>
+                    <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+                    <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+                    <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+                    <trace>java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)</trace>
+                    <trace>java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)</trace>
+                    <trace>java.lang.Thread.run(Thread.java:745)</trace>
+                  </stackTrace>
+                  <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" reference="../../../../../entry/org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem/lastState/cause/cause/suppressedExceptions"/>
+                </cause>
+              </lastState>
+            </org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+            <boolean>true</boolean>
+          </entry>
+          <entry>
+            <org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+              <disposer reference="../../../../../../.."/>
+              <disposable class="hudson.plugins.ws_cleanup.Wipeout$DisposableImpl" plugin="ws-cleanup@0.32">
+                <node></node>
+                <path>/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484065440978</path>
+              </disposable>
+              <registered>2017-01-10 16:24:00.978 UTC</registered>
+              <lastState class="org.jenkinsci.plugins.resourcedisposer.Disposable$State$Thrown">
+                <displayName>Unable to delete &apos;/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484065440978/yocto/build-s5p4418-navi-ref-tiny/tmp/work/cortexa9hf-neon-poky-linux-gnueabi/bash-completion/2.1-r0/bash-completion-2.1/test/fixtures/_filedir&apos;. Tried 3 times (of a maximum of 3) waiting 0.1 sec between attempts.</displayName>
+                <cause class="java.io.IOException">
+                  <detailMessage>Unable to delete &apos;/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484065440978/yocto/build-s5p4418-navi-ref-tiny/tmp/work/cortexa9hf-neon-poky-linux-gnueabi/bash-completion/2.1-r0/bash-completion-2.1/test/fixtures/_filedir&apos;. Tried 3 times (of a maximum of 3) waiting 0.1 sec between attempts.</detailMessage>
+                  <cause class="java.nio.file.DirectoryNotEmptyException">
+                    <stackTrace>
+                      <trace>sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:242)</trace>
+                      <trace>sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:108)</trace>
+                      <trace>java.nio.file.Files.deleteIfExists(Files.java:1165)</trace>
+                      <trace>hudson.Util.tryOnceDeleteFile(Util.java:290)</trace>
+                      <trace>hudson.Util.deleteFile(Util.java:246)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1231)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                      <trace>hudson.FilePath.access$1000(FilePath.java:195)</trace>
+                      <trace>hudson.FilePath$14.invoke(FilePath.java:1201)</trace>
+                      <trace>hudson.FilePath$14.invoke(FilePath.java:1198)</trace>
+                      <trace>hudson.FilePath.act(FilePath.java:1018)</trace>
+                      <trace>hudson.FilePath.act(FilePath.java:996)</trace>
+                      <trace>hudson.FilePath.deleteRecursive(FilePath.java:1198)</trace>
+                      <trace>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl.dispose(Wipeout.java:110)</trace>
+                      <trace>org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer$WorkItem.run(AsyncResourceDisposer.java:254)</trace>
+                      <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+                      <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+                      <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+                      <trace>java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)</trace>
+                      <trace>java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)</trace>
+                      <trace>java.lang.Thread.run(Thread.java:745)</trace>
+                    </stackTrace>
+                    <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" reference="../../../../../../entry/org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem/lastState/cause/cause/suppressedExceptions"/>
+                    <file>/var/jenkins_home/workspace/jenkins_yocto_daily_ws-cleanup_1484065440978/yocto/build-s5p4418-navi-ref-tiny/tmp/work/cortexa9hf-neon-poky-linux-gnueabi/bash-completion/2.1-r0/bash-completion-2.1/test/fixtures/_filedir</file>
+                  </cause>
+                  <stackTrace>
+                    <trace>hudson.Util.deleteFile(Util.java:251)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1231)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.deleteContentsRecursive(FilePath.java:1240)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1222)</trace>
+                    <trace>hudson.FilePath.access$1000(FilePath.java:195)</trace>
+                    <trace>hudson.FilePath$14.invoke(FilePath.java:1201)</trace>
+                    <trace>hudson.FilePath$14.invoke(FilePath.java:1198)</trace>
+                    <trace>hudson.FilePath.act(FilePath.java:1018)</trace>
+                    <trace>hudson.FilePath.act(FilePath.java:996)</trace>
+                    <trace>hudson.FilePath.deleteRecursive(FilePath.java:1198)</trace>
+                    <trace>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl.dispose(Wipeout.java:110)</trace>
+                    <trace>org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer$WorkItem.run(AsyncResourceDisposer.java:254)</trace>
+                    <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+                    <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+                    <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+                    <trace>java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)</trace>
+                    <trace>java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)</trace>
+                    <trace>java.lang.Thread.run(Thread.java:745)</trace>
+                  </stackTrace>
+                  <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" reference="../../../../../entry/org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem/lastState/cause/cause/suppressedExceptions"/>
+                </cause>
+              </lastState>
+            </org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+            <boolean>true</boolean>
+          </entry>
+        </m>
+      </default>
+    </java.util.Collections_-SetFromMap>
+  </backlog>
+</org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer>

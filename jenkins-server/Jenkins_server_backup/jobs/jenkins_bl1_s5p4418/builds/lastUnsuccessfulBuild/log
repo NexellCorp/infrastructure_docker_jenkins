@@ -1,0 +1,68 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/workspace/jenkins_bl1_s5p4418
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+ > git init /var/jenkins_home/workspace/jenkins_bl1_s5p4418 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 +refs/heads/*:refs/remotes/origin/*
+ERROR: Error cloning remote repo 'origin'
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mhudson.plugins.git.GitException: Command "git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 +refs/heads/*:refs/remotes/origin/*" returned status code 128:
+stdout: 
+stderr: fatal: unable to access 'http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418/': Could not resolve host: git.nexell.co.kr
+
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandIn(CliGitAPIImpl.java:1745)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.launchCommandWithCredentials(CliGitAPIImpl.java:1489)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl.access$300(CliGitAPIImpl.java:64)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl$1.execute(CliGitAPIImpl.java:315)
+	at org.jenkinsci.plugins.gitclient.CliGitAPIImpl$2.execute(CliGitAPIImpl.java:512)
+	at hudson.plugins.git.GitSCM.retrieveChanges(GitSCM.java:1054)
+	at hudson.plugins.git.GitSCM.checkout(GitSCM.java:1094)
+	at hudson.scm.SCM.checkout(SCM.java:495)
+	at hudson.model.AbstractProject.checkout(AbstractProject.java:1278)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.defaultCheckout(AbstractBuild.java:604)
+	at jenkins.scm.SCMCheckoutStrategy.checkout(SCMCheckoutStrategy.java:86)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:529)
+	at hudson.model.Run.execute(Run.java:1720)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:404)
+ERROR: null
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mSending e-mails to: jenkins@nexell.co.kr
+ERROR: Unknown SMTP host: smtp.worksmobile.com
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mjavax.mail.MessagingException: Unknown SMTP host: smtp.worksmobile.com;
+  nested exception is:
+	java.net.UnknownHostException: smtp.worksmobile.com
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:1932)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:638)
+	at javax.mail.Service.connect(Service.java:317)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at hudson.tasks.MailSender.run(MailSender.java:129)
+	at hudson.tasks.Mailer.perform(Mailer.java:170)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:78)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:720)
+	at hudson.model.Build$BuildExecution.post2(Build.java:185)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:665)
+	at hudson.model.Run.execute(Run.java:1745)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:404)
+Caused by: java.net.UnknownHostException: smtp.worksmobile.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:286)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:205)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:1900)
+	... 18 more
+Finished: FAILURE

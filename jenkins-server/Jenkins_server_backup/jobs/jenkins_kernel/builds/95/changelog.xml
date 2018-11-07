@@ -1,0 +1,21 @@
+commit ec32f86a18e79b9fbf5030a2a1e3547b03b31783
+tree ab0daa19849fa26dda0fe3881205ce78e00791dc
+parent d165a1d7c350f97df1cc4f35cd67aab4ca6c5345
+author Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 11:22:09 +0900
+committer Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 11:22:09 +0900
+
+    soc: nexell: nxs_dev: Add new field to nxs_control_syncinfo
+
+    This patch adds new field to nxs_control_syncinfo. Following field is
+    added.
+    - pixelclk
+    - interlace
+    - hsyncpol
+    - vsyncpol
+    - fps
+
+    Change-Id: Ibed0f2618067032f2093da6e612fa1e990e349ca Signed-off-by:
+    Sungwoo Park <swpark@nexell.co.kr>
+
+
+:100644 100644 e67712504b1fac10b324d2b8dcd9a24145806745 7b8a8056e18590d84be34492e768173db0113234 M	include/linux/soc/nexell/nxs_dev.h

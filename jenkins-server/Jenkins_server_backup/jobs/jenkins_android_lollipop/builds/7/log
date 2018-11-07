@@ -1,0 +1,7 @@
+Started by timer
+Building in workspace /var/jenkins_home/workspace/jenkins_android_lollipop
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+[jenkins_android_lollipop] $ /bin/sh -xe /tmp/hudson7819079074882296540.sh
+[jenkins_android_lollipop] $ /bin/sh -xe /tmp/hudson9092747975985936581.sh
+Finished: SUCCESS

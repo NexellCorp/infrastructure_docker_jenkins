@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>log-parser plugin page</title>
+		<link type="text/css" rel="stylesheet" href="http://192.168.1.248:8080/css/style.css" />
+		<link type="text/css" rel="stylesheet" href="http://192.168.1.248:8080/css/color.css" />
+	</head>
+	<body>
+<script type="text/javascript">
+	function toggleList(list){
+		element = document.getElementById(list).style;
+		element.display == 'none' ? element.display='block' : element.display='none';
+	}
+</script>
+<img src="http://192.168.1.248:8080///static/7e5a5928/images/16x16/red.gif" style="margin: 2px;" width="24" alt="Error Icon" height="24" />
+<a href="javascript:toggleList('Error')" target="_self"><STRONG>Error (0)</STRONG></a><br />
+<ul id="Error" style="display:none; margin-left:0; padding-left:3em">
+</ul>
+<img src="http://192.168.1.248:8080///static/7e5a5928/images/16x16/yellow.gif" style="margin: 2px;" width="24" alt="Warning Icon" height="24" />
+<a href="javascript:toggleList('Warning')" target="_self"><STRONG>Warning (4)</STRONG></a><br />
+<ul id="Warning" style="display:none; margin-left:0; padding-left:3em">
+ <a target="content" href="log_content.html">Beginning of log</a>
+<br/>(4 Warnings in this section)<br/>
+<li>1 <a target="content" href="log_content.html#WARNING1"><span style="color:orange">common/cmd_checkhw.c:104:1: warning: data definition has no type or storage class [enabled by default]</span></a></li><br/>
+<li>2 <a target="content" href="log_content.html#WARNING2"><span style="color:orange">common/cmd_checkhw.c:104:1: warning: type defaults to 'int' in declaration of 'EXPORT_SYMBOL_GPL' [-Wimplicit-int]</span></a></li><br/>
+<li>3 <a target="content" href="log_content.html#WARNING3"><span style="color:orange">common/cmd_checkhw.c:104:1: warning: parameter names (without types) in function declaration [enabled by default]</span></a></li><br/>
+<li>4 <a target="content" href="log_content.html#WARNING4"><span style="color:orange">drivers/video/cfb_console.c:2084:21: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]</span></a></li><br/>
+</ul>
+<img src="http://192.168.1.248:8080///static/7e5a5928/images/16x16/blue.gif" style="margin: 2px;" width="24" alt="Info Icon" height="24" />
+<a href="javascript:toggleList('Info')" target="_self"><STRONG>Info (0)</STRONG></a><br />
+<ul id="Info" style="display:none; margin-left:0; padding-left:3em">
+</ul>
+	</body>
+</html>

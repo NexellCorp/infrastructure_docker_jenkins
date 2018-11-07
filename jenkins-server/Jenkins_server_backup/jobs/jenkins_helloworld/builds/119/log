@@ -1,0 +1,31 @@
+Retriggered by user anonymous for Gerrit: http://git.nexell.co.kr:8081/gerrit/1947
+Building in workspace /var/jenkins_home/workspace/jenkins_helloworld
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/jenkins_test/helloworld
+ > git init /var/jenkins_home/workspace/jenkins_helloworld # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/jenkins_test/helloworld
+ > git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/jenkins_test/helloworld +refs/heads/*:refs/remotes/origin/*
+ERROR Gerrit response: Unauthorized > git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/jenkins_test/helloworld # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/jenkins_test/helloworld # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/jenkins_test/helloworld
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/jenkins_test/helloworld refs/changes/47/1947/1
+ > git rev-parse 8d0a222bc7b5a5945248a03c31f93020db5ba4f5^{commit} # timeout=10
+Checking out Revision 8d0a222bc7b5a5945248a03c31f93020db5ba4f5 (refs/changes/47/1947/1)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8d0a222bc7b5a5945248a03c31f93020db5ba4f5
+ > git rev-parse FETCH_HEAD^{commit} # timeout=10
+ > git rev-list 36c623a6455b070b57e1a29bfc90c499116d90e0 # timeout=10
+[jenkins_helloworld] $ /bin/sh /tmp/hudson7958714290280055905.sh
+SSH: Connecting from host [51b564136081]
+SSH: Connecting with configuration [jenkins-snapshot] ...
+SSH: Disconnecting configuration [jenkins-snapshot] ...
+SSH: Transferred 1 file(s)
+[WS-CLEANUP] Deleting project workspace...[WS-CLEANUP] Skipped based on build state SUCCESS
+Finished: SUCCESS

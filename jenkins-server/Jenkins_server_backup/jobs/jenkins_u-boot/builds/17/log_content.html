@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>log-parser plugin page</title>
+		<link type="text/css" rel="stylesheet" href="nullcss/style.css" />
+		<link type="text/css" rel="stylesheet" href="nullcss/color.css" />
+	</head>
+	<body>
+<pre>Retriggered by user anonymous for Gerrit: http://git.nexell.co.kr:8081/gerrit/1803
+Building in workspace /var/jenkins_home/workspace/jenkins_u-boot
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01
+ &gt; git init /var/jenkins_home/workspace/jenkins_u-boot # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01
+ &gt; git --version # timeout=10
+ &gt; git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01 +refs/heads/*:refs/remotes/origin/*
+ &gt; git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01 # timeout=10
+ &gt; git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ &gt; git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01
+ &gt; git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/linux/u-boot/u-boot-2016.01 refs/changes/03/1803/1
+ &gt; git rev-parse dda15d011091d04d4bdb69e5ab0cbddc57d25328^{commit} # timeout=10
+Checking out Revision dda15d011091d04d4bdb69e5ab0cbddc57d25328 (refs/changes/03/1803/1)
+ &gt; git config core.sparsecheckout # timeout=10
+ &gt; git checkout -f dda15d011091d04d4bdb69e5ab0cbddc57d25328
+ &gt; git rev-parse FETCH_HEAD^{commit} # timeout=10
+ &gt; git rev-list 4985f970ecda8994418d058805e873e878e4ad81 # timeout=10
+[jenkins_u-boot] $ /bin/sh /tmp/hudson4177883545645451451.sh
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/kconfig/conf.o
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/zconf.lex.c
+  SHIPPED scripts/kconfig/zconf.hash.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+#
+# configuration written to .config
+#
+make: arm-cortex_a9-linux-gnueabi-gcc: Command not found
+/bin/sh: 1: arm-cortex_a9-linux-gnueabi-gcc: not found
+dirname: missing operand
+Try 'dirname --help' for more information.
+scripts/kconfig/conf  --silentoldconfig Kconfig
+  CHK     include/config.h
+  UPD     include/config.h
+  GEN     include/autoconf.mk
+/bin/sh: 1: arm-cortex_a9-linux-gnueabi-gcc: not found
+  GEN     include/autoconf.mk.dep
+/bin/sh: 1: arm-cortex_a9-linux-gnueabi-gcc: not found
+scripts/Makefile.autoconf:72: recipe for target 'include/autoconf.mk' failed
+make[1]: *** [include/autoconf.mk] Error 1
+make[1]: *** Waiting for unfinished jobs....
+scripts/Makefile.autoconf:47: recipe for target 'include/autoconf.mk.dep' failed
+make[1]: *** [include/autoconf.mk.dep] Error 1
+make: *** No rule to make target 'include/config/auto.conf', needed by 'include/config/uboot.release'.  Stop.
+Build step 'Execute shell' marked build as failure
+</pre>	</body>
+</html>

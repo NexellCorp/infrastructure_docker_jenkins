@@ -1,0 +1,34 @@
+commit 27b91afa7cce47db7f4208b0ad02052256848c67
+tree 8cde9c6104867d3f7eaa350dd89ca3e688f35a6e
+parent 81b08c24b7a3dffba76fdbc17780f8a1e1b24659
+author DeokJin Lee <truevirtue@nexell.co.kr> 2016-12-23 17:55:24 +0900
+committer DeokJin Lee <truevirtue@nexell.co.kr> 2017-01-06 10:50:37 +0900
+
+    bl1: change directory structure
+
+    This patch changed the directory structure for efficient management.
+
+    Change-Id: Ie8a6277c9c27fcadce5bb16d335349d680bc70e0 Signed-off-by:
+    DeokJin Lee <truevirtue@nexell.co.kr>
+
+
+:100644 100644 f0cd9db5435f247f0ee11e2a052283c390ff0114 aad6137dcbd59c4f93ace037a3f162c5db37af52 M	Makefile
+:100644 000000 47ee393a3bd240b0ed2ab2e17099359ab5c57ac2 0000000000000000000000000000000000000000 D	src/CRC32.c
+:100644 100644 5cc46d25a2e1783bfabf69d29e08d956970473f7 5cc46d25a2e1783bfabf69d29e08d956970473f7 R100	src/diskio.c	src/boot/diskio.c
+:100644 100644 d63ffb6a544d4b0d12f3f67da5484f6d1eaffbde d63ffb6a544d4b0d12f3f67da5484f6d1eaffbde R100	src/diskio.h	src/boot/diskio.h
+:100644 100644 b495e76886f7d2c2f54681fab3ffd022a91d8f14 b495e76886f7d2c2f54681fab3ffd022a91d8f14 R100	src/fatfs.c	src/boot/fatfs.c
+:100644 100644 18e588cffd52fdb486be1398e0d66d20bff28196 18e588cffd52fdb486be1398e0d66d20bff28196 R100	src/fatfs.h	src/boot/fatfs.h
+:100644 100644 18d9c9dfc2476810d60c2f753072acd3419598b9 18d9c9dfc2476810d60c2f753072acd3419598b9 R100	src/iSDHCBOOT.c	src/boot/iSDHCBOOT.c
+:100644 100644 b4650d2400b4dc679736fe51a64bd3ef7f7e16f5 b4650d2400b4dc679736fe51a64bd3ef7f7e16f5 R100	src/iSDHCBOOT.h	src/boot/iSDHCBOOT.h
+:100644 100644 e6b159707f744d1bed18ca66725bb7929b31c636 e6b159707f744d1bed18ca66725bb7929b31c636 R100	src/iUSBBOOT.c	src/boot/iUSBBOOT.c
+:100644 100644 02b2fd0772056e00a4490a06aca19d4520bc22ec 02b2fd0772056e00a4490a06aca19d4520bc22ec R100	src/iUSBBOOT.h	src/boot/iUSBBOOT.h
+:100644 100644 b658b018f805a47c2db93c8cb23bfbd0a1c77b4e b658b018f805a47c2db93c8cb23bfbd0a1c77b4e R100	src/DDR3_K4B8G1646B_MCK0.h	src/memory/DDR3_K4B8G1646B_MCK0.h
+:100644 100644 3941713e629e5ebdc3e43eef908ea39bd4aa44a9 06ba4e6abe7e04dbfc8b65fed57579cbdca0500f R098	src/init_DDR3.c	src/memory/ddr3_sdram.c
+:100644 100644 ddaac3efb01a9a36757ba2b93d8c13e4b7d9c492 ddaac3efb01a9a36757ba2b93d8c13e4b7d9c492 R100	src/ddr3_sdram.h	src/memory/ddr3_sdram.h
+:100644 100644 5ce9c820cbe15843afb0d796e2b19748f1cb72f3 5ce9c820cbe15843afb0d796e2b19748f1cb72f3 R100	src/init_LPDDR3.c	src/memory/init_LPDDR3.c
+:100644 100644 1ac092a5142cb136824bea2c116fbf4ef98df496 1ac092a5142cb136824bea2c116fbf4ef98df496 R100	src/pmic.c	src/pmic/pmic.c
+:100644 100644 d8eeb30af4db5537a2be3e510661c5ad7ccd3045 d8eeb30af4db5537a2be3e510661c5ad7ccd3045 R100	src/pmic_axp228.h	src/pmic/pmic_axp228.h
+:100644 100644 59a5e0ce3b4710a98d7b8fb1a8e7aeb11074b763 59a5e0ce3b4710a98d7b8fb1a8e7aeb11074b763 R100	src/pmic_mp8845.h	src/pmic/pmic_mp8845.h
+:100644 100644 c545e6bec09407ef2a53c62cb56937f7bc689161 c545e6bec09407ef2a53c62cb56937f7bc689161 R100	src/pmic_nxe2000.h	src/pmic/pmic_nxe2000.h
+:100644 100644 14b7b573457343bccaa23088a9092aa02f3fd1b2 14b7b573457343bccaa23088a9092aa02f3fd1b2 R100	src/memtester.c	src/test/memtester.c
+:100644 100644 2dd5575544aac427255bae104d03263aea586299 2dd5575544aac427255bae104d03263aea586299 R100	src/memtester.h	src/test/memtester.h

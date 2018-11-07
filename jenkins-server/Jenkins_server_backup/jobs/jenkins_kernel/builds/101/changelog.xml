@@ -1,0 +1,28 @@
+commit a4d4cf333fd06f019601fd737aac0845f377f5d4
+tree a0731dca6aa3a78883807b30ab8e095fe664a965
+parent 2d82aa166e49d0b5c53f6c96f7bd2deabd130728
+author Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 12:46:21 +0900
+committer Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 12:46:21 +0900
+
+    soc: nexell: nxstream: Modify nxs_function_make
+
+    This patch modifies nxs_function_make function to support display 
+    blending model. If client wants to make nxs_function for display path, 
+    previous code needs to call nxs_function_add_to_display. This patch 
+    removes that dependency.
+
+    If client wants to blend nxs_function to already ready display path, 
+    call like below.
+    -------------------------------------------------------------- struct
+    nxs_function *f_blend = nxs_function_make(3, true, 0, NXS_FUNCTION_DMAR,
+    NXS_FUNCTION_ANY, NXS_FUNCTION_MLC_BLENDER, NXS_FUNCTION_ANY);
+    -------------------------------------------------------------- 
+    nxs_function_make function internally calls nxs_function_add_to_display
+    function so client do not need to worry about managing display chain.
+
+    Change-Id: I97c15d31259ad427295ea3e3abf49a524c231ffb Signed-off-by:
+    Sungwoo Park <swpark@nexell.co.kr>
+
+
+:100644 100644 0493285300928e37779b16fd59973187a36c3fc4 2eb46a6e2802909c67581a2963e99357441b5496 M	drivers/soc/nexell/nxstream/nxs_function.c
+:100644 100644 f8aa3a37ad007216937582b57862aa512c85db23 8db4fa5f924b84983962ed12e5001aba0d8e72b9 M	include/linux/soc/nexell/nxs_function.h

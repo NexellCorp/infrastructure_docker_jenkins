@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.logparser.LogParserPublisher_-DescriptorImpl plugin="log-parser@2.0">
+  <parsingRulesGlobal>
+    <hudson.plugins.logparser.ParserRuleFile>
+      <name>build rules</name>
+      <path>/var/jenkins_home/build_rule/build.rules</path>
+    </hudson.plugins.logparser.ParserRuleFile>
+    <hudson.plugins.logparser.ParserRuleFile>
+      <name>build yocto rules</name>
+      <path>/var/jenkins_home/build_rule/build_yocto.rules</path>
+    </hudson.plugins.logparser.ParserRuleFile>
+  </parsingRulesGlobal>
+  <useLegacyFormatting>false</useLegacyFormatting>
+</hudson.plugins.logparser.LogParserPublisher_-DescriptorImpl>

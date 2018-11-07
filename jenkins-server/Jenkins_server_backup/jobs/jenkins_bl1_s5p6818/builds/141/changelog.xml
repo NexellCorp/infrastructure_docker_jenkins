@@ -1,0 +1,26 @@
+commit dfbfd42d05a1899ddbaab41c22b7c3c05f451798
+tree 16364d17a3de926a936dae84a6ff84849405c197
+parent 0deede9923b2deef97a12a9f0d08f60e10210996
+author DeokJin Lee <truevirtue@nexell.co.kr> 2016-12-23 16:33:14 +0900
+committer DeokJin Lee <truevirtue@nexell.co.kr> 2017-01-06 10:50:37 +0900
+
+    bl1: modify the h/w write leveling sequence
+
+    This patch modified h/w write leveling sequence.
+
+     [Fixed]
+     - Since 2CS is not supported, the code has been
+       modified to operate only on chip0.
+     - code clean up.
+
+    Depends-On: I4a3dc943ccfe94cb4d46aff7f07e0ce37939f303 Depends-On:
+    I58bb421f0ba282c4f33c2eed3ace87c8817e3808 Depends-On:
+    I5f9d2343a7b5cfad38f7e07a9c4a2b363fac17c3 Depends-On:
+    I21015e6da1a01f6c857a9c1ff9c3607740316853 Depends-On:
+    I2fd024e1669ddf6b70c351871dc2fab31461eebf
+
+    Change-Id: I4a3dc943ccfe94cb4d46aff7f07e0ce37939f303 Signed-off-by:
+    DeokJin Lee <truevirtue@nexell.co.kr>
+
+
+:100644 100644 1e17d992cad8b090440e902b5aa32d57aa1fef46 89f0e20196e7015c13c4eeeb677c6804b0ce51ef M	src/init_DDR3.c

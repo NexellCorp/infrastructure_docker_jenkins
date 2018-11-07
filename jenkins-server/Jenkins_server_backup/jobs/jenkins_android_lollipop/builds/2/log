@@ -1,0 +1,20 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/jenkins_home/workspace/jenkins_android_lollipop
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+[jenkins_android_lollipop] $ /bin/sh -xe /tmp/hudson5128918844512861055.sh
++ mkdir lollipop-5.1.1_r6
++ cd lollipop-5.1.1_r6
++ repo init -u ssh://jenkins@git.nexell.co.kr:29418/nexell/android/lollipop/manifest -b lollipop-5.1.1_r6
+Get https://gerrit.googlesource.com/git-repo/clone.bundle
+Get https://gerrit.googlesource.com/git-repo
+Get ssh://jenkins@git.nexell.co.kr:29418/nexell/android/lollipop/manifest
+/var/jenkins_home/.ssh/config line 1: Bad protocol 2 host key algorithms '+ssh-dss'.
+/var/jenkins_home/.ssh/config line 1: Bad protocol 2 host key algorithms '+ssh-dss'.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Build was aborted
+Aborted by [8mha:AAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL90rzsvPzyPAATbMabwgAAAA==[0munknown
+Finished: ABORTED

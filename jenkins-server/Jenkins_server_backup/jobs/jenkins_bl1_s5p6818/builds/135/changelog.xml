@@ -1,0 +1,22 @@
+commit cf3d586f519d38383d7932f9ecd9cbfb85585ba7
+tree 897d254934f7b74c6713ab87eadbb39a1b572566
+parent c7ead12ce0e9da1e8e4bb3e5acd060d4ec22160d
+author DeokJin Lee <truevirtue@nexell.co.kr> 2016-12-23 11:40:07 +0900
+committer DeokJin Lee <truevirtue@nexell.co.kr> 2017-01-06 10:50:27 +0900
+
+    bl1: modify the crc algorithm sequence
+
+    This patch has been modified to user the crc algorithm for kernel
+    version dependencies. To support all kernel versions.
+
+    Change-Id: I689c4202e63f27bb3f0d898124920e465805a08d Signed-off-by:
+    DeokJin Lee <truevirtue@nexell.co.kr>
+
+
+:100644 100644 c24650bdb5723cdb93e1847788caec63e91d62fe b440727fda6a4a765909a4f8d86233cb80a19972 M	Makefile
+:100644 100644 4ca4a3fdd2da2ddb936402681216ada730bb47e7 7f649af9f5b6b00cc944da9e983291cda37fda12 M	src/aarch32_libs.S
+:100644 100644 e1d19dde6029bf12c6fd36109bcf7cf83991644c b1372def586c3f0a47d03993e8cd5eedc23218ae M	src/aarch64_libs.S
+:000000 100644 0000000000000000000000000000000000000000 60cfc1bbf3bc01536c846666d87ac8c395e3aed6 A	src/crc.c
+:100644 100644 95dc24c7b9f77e2bf87866aa83a45c6b928c61be 7e9906fc5933c87a68e3f4e1691556299e9ef791 M	src/nx_peridot.h
+:100644 100644 3ece01b8a453c8b4a4e8fbbeb48aa4b584ae3432 9291a2a4109ac24a8bfe23cecd646039970155e0 M	src/secondboot.c
+:100644 100644 cefddda47080c52f8183eb3b9bb784a1ba6ca5bb eed1a9c1cc4efc82098e8ab9f9027a13ca96a65e M	src/sleep.c

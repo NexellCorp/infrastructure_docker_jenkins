@@ -1,0 +1,19 @@
+commit 0deede9923b2deef97a12a9f0d08f60e10210996
+tree 4a2b4e677385d6a1063597d78af77184f108d687
+parent 15ccf4e089d0dfe35553ee05df07292809dafb08
+author DeokJin Lee <truevirtue@nexell.co.kr> 2016-12-23 15:39:09 +0900
+committer DeokJin Lee <truevirtue@nexell.co.kr> 2017-01-06 10:50:37 +0900
+
+    bl1: ema setting position fix
+
+    This patch was modified ema code positioned in the main function.
+    because it can affect the sram and i-cache operation, it should be
+    performed from the main code to the beginning.
+
+    Change-Id: I0c7913b6995e3df0df9d1f517b5a259d38cbe00b Signed-off-by:
+    DeokJin Lee <truevirtue@nexell.co.kr>
+
+
+:100644 100644 62d93c4a0f9c6fd2dfb09170da69637a86d83e1b f0cd9db5435f247f0ee11e2a052283c390ff0114 M	Makefile
+:000000 100644 0000000000000000000000000000000000000000 b58be647c3430aa2f357f5f638c5d4522f18a11c A	src/ema.c
+:100644 100644 87877ad5027ef5dbbe893ae4c2428b58938b7d48 b95aa06cbc80fc932698df6ba318c4cf0a5a267e M	src/secondboot.c

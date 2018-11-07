@@ -1,0 +1,24 @@
+commit f9d59dbc859425dd0e42c4210aa09612c3505227
+tree 8cd4f4227618deee47ec0e60c4f5d7b14cf03828
+parent a4d4cf333fd06f019601fd737aac0845f377f5d4
+author Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 13:21:07 +0900
+committer Sungwoo Park <swpark@nexell.co.kr> 2017-01-12 13:24:46 +0900
+
+    soc: nexell: nxstream: Modify nxs_function_find_dev
+
+    This patch adds argument index to nxs_function_find_dev function. 
+    nxs_function_find_dev function finds nxs_dev in nxs_function chain but 
+    previous code has only dev_function argument but, if multiple nxs_devs 
+    that have same dev_function are exist in nxs_function chain, 
+    nxs_function_find_dev will return matching first entry.
+
+    This patch also modifies all nxs_function_find_dev client code 
+    compatible with changed signature.
+
+    Change-Id: Id511d7aeedfedef20500c0b5cf2a84da5fa5d1f0 Signed-off-by:
+    Sungwoo Park <swpark@nexell.co.kr>
+
+
+:100644 100644 a136dbcaa5c353d3e874554e31f4ed1cb2359c73 5f18796044e409cbc33291f714feec5bc5815f05 M	drivers/media/platform/nexell/nxs_v4l2_builder.c
+:100644 100644 2eb46a6e2802909c67581a2963e99357441b5496 2ce8eb5ebe0977600532d2a11b2137e827e21568 M	drivers/soc/nexell/nxstream/nxs_function.c
+:100644 100644 8db4fa5f924b84983962ed12e5001aba0d8e72b9 9f5e2cf47ba80d6167a30bb126031e297131b1ce M	include/linux/soc/nexell/nxs_function.h

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>$ mkdir lollipop-5.1.1_r6&#xd;
+$ cd lollipop-5.1.1_r6&#xd;
+$ repo init -u ssh://user_id@git.nexell.co.kr:29418/nexell/android/lollipop/manifest -b lollipop-5.1.1_r6&#xd;
+$ repo sync</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>H H(0-1) * * 1-5 </spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#mkdir lollipop-5.1.1_r6
+#cd lollipop-5.1.1_r6
+#repo init -u ssh://jenkins@git.nexell.co.kr:29418/nexell/android/lollipop/manifest -b lollipop-5.1.1_r6
+#repo sync</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>#build</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer plugin="mailer@1.18">
+      <recipients>suker@nexell.co.kr swpark@nexell.co.kr</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.32">
+      <deleteDirs>true</deleteDirs>
+      <cleanupParameter></cleanupParameter>
+      <externalDelete></externalDelete>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+  </buildWrappers>
+</project>

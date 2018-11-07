@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>log-parser plugin page</title>
+		<link type="text/css" rel="stylesheet" href="http://192.168.1.248:8080/css/style.css" />
+		<link type="text/css" rel="stylesheet" href="http://192.168.1.248:8080/css/color.css" />
+	</head>
+	<body>
+<pre>Triggered by Gerrit: http://git.nexell.co.kr:8081/gerrit/1835
+Building in workspace /var/jenkins_home/workspace/jenkins_bl1_s5p4418
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Done
+Wiping out workspace first.
+Cloning the remote Git repository
+Cloning repository http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+ &gt; git init /var/jenkins_home/workspace/jenkins_bl1_s5p4418 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+ &gt; git --version # timeout=10
+using GIT_ASKPASS to set credentials 
+ &gt; git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 +refs/heads/*:refs/remotes/origin/*
+ &gt; git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 # timeout=10
+ &gt; git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ &gt; git config remote.origin.url http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 # timeout=10
+Fetching upstream changes from http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418
+using GIT_ASKPASS to set credentials 
+ &gt; git fetch --tags --progress http://git.nexell.co.kr:8081/gerrit/nexell/bl1/bl1-s5p4418 refs/changes/35/1835/3
+ &gt; git rev-parse af4170a412701e679400181a5e66c538b3499e90^{commit} # timeout=10
+Checking out Revision af4170a412701e679400181a5e66c538b3499e90 (refs/changes/35/1835/3)
+ &gt; git config core.sparsecheckout # timeout=10
+ &gt; git checkout -f af4170a412701e679400181a5e66c538b3499e90
+ &gt; git rev-parse FETCH_HEAD^{commit} # timeout=10
+ &gt; git rev-list a15460d5e017a4831258c75ce439843f9a2200e1 # timeout=10
+[jenkins_bl1_s5p4418] $ /bin/sh /tmp/hudson119485767309191264.sh
+[compile....src/startup.S]
+[compile....src/armv7_libs.S]
+[compile....src/clockinit.c]
+[compile....src/secondboot.c]
+src/secondboot.c: In function 'BootMain':
+<a name="WARNING1"></a><span style="color:orange">src/secondboot.c:236:64: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]</span>
+   ERROR("2nd Boot Header is invalid, Please check it out!\r\n");
+                                                                ^
+[compile....src/subcpu.c]
+[compile....src/plat_pm.c]
+[compile....src/ema.c]
+[compile....src/resetcon.c]
+[compile....src/GPIO.c]
+[compile....src/serial.c]
+[compile....src/util.c]
+[compile....src/CRC32.c]
+[compile....src/gic.c]
+[compile....src/arm_gic.c]
+[compile....src/dpc.c]
+[compile....src/buildinfo.c]
+[compile....src/printf.c]
+[compile....src/non_secure.c]
+[compile....src/services/smc_entry.S]
+[compile....src/services/smc_handler.c]
+src/services/smc_handler.c: In function 'smc_monitor_fiq_handler':
+<a name="WARNING2"></a><span style="color:orange">src/services/smc_handler.c:73:59: warning: suggest braces around empty body in an 'else' statement [-Wempty-body]</span>
+   WARN("unknown parameter smc_id : 0x%08X \r\n", g_smc_id);
+                                                           ^
+[compile....src/services/sip_main.c]
+[compile....src/services/std_svc/std_svc_setup.c]
+[compile....src/arm_topology.c]
+[compile....src/services/std_svc/psci/psci_system_off.c]
+[compile....src/services/std_svc/psci/psci_off.c]
+[compile....src/services/std_svc/psci/psci_on.c]
+[compile....src/services/std_svc/psci/psci_suspend.c]
+[compile....src/services/std_svc/psci/psci_common.c]
+[compile....src/services/std_svc/psci/psci_main.c]
+[compile....src/bclk-dfs.c]
+[compile....src/memory/init_DDR3.c]
+[compile....src/CRYPTO.c]
+[compile....src/i2c_gpio.c]
+[compile....src/pmic/pmic.c]
+[compile....src/iUSBBOOT.c]
+[compile....src/iSDHCBOOT.c]
+[link.... out/bl1-navi.elf]
+[binary.... out/bl1-navi.bin]
+</pre>	</body>
+</html>

@@ -1,0 +1,20 @@
+commit 58d193ccacc2d8d7f6c7230147a4aaaa9c6f2f78
+tree c9c57ff1dd3f4ec7e9abef6c6e2952066edb8c97
+parent cf1277ded96b0a19b44025c0ac7a39b86ce1d967
+author DeokJin Lee <truevirtue@nexell.co.kr> 2017-01-03 15:37:58 +0900
+committer DeokJin Lee <truevirtue@nexell.co.kr> 2017-01-06 10:53:11 +0900
+
+    bl1: add another boot mode
+
+    This patch adds spi, nand, sdfs boot modes. Supported in kernel 3.4.
+
+    Change-Id: I2af23ec2e476e562c55b81dde749a8a1e22cfdf5 Signed-off-by:
+    DeokJin Lee <truevirtue@nexell.co.kr>
+
+
+:100644 100644 dbd04fca21bfb2f9351233c554019eb6a3fcaf9b e4549b6117200b2e7730a3b89208afad6c770dbc M	Makefile
+:100644 100644 5cc46d25a2e1783bfabf69d29e08d956970473f7 d9464f46b92d0fd5b273b0a1dd224990f94dfc48 M	src/boot/diskio.c
+:100644 100644 b495e76886f7d2c2f54681fab3ffd022a91d8f14 1bc9afe00c6babed9b5d9d69b0ede24376123f8a M	src/boot/fatfs.c
+:000000 100644 0000000000000000000000000000000000000000 acb1359b4ecb41a19c81c5ef7882990aa745adc6 A	src/boot/iNANDBOOTEC.c
+:000000 100644 0000000000000000000000000000000000000000 ea16349d2b610c49e2fd001c7fb155aab239b0de A	src/boot/iSDHCFSBOOT.c
+:000000 100644 0000000000000000000000000000000000000000 0ffbea141111688ac4193e66ea34fa9fe0b1ca10 A	src/boot/iSPIBOOT.c
