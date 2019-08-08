@@ -1,0 +1,256 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors>
+    <string>hudson.diagnosis.ReverseProxySetupMonitor</string>
+  </disabledAdministrativeMonitors>
+  <version>2.150.1</version>
+  <installStateName>RUNNING</installStateName>
+  <numExecutors>2</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:nxJenkins</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:nxJenkins</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:nxJenkins</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:nxJenkins</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:nxJenkins</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.ManualTrigger:nxJenkins</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.ManualTrigger:seoji</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.ManualTrigger:suker</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.Retrigger:nxJenkins</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.Retrigger:nxJenkinsJobBuilder</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.Retrigger:seoji</permission>
+    <permission>com.sonyericsson.hudson.plugins.gerrit.trigger.PluginImpl.Retrigger:suker</permission>
+    <permission>hudson.model.Computer.Build:nxJenkins</permission>
+    <permission>hudson.model.Computer.Configure:nxJenkins</permission>
+    <permission>hudson.model.Computer.Connect:nxJenkins</permission>
+    <permission>hudson.model.Computer.Create:nxJenkins</permission>
+    <permission>hudson.model.Computer.Delete:nxJenkins</permission>
+    <permission>hudson.model.Computer.Disconnect:nxJenkins</permission>
+    <permission>hudson.model.Hudson.Administer:nxJenkins</permission>
+    <permission>hudson.model.Hudson.Read:anonymous</permission>
+    <permission>hudson.model.Hudson.Read:authenticated</permission>
+    <permission>hudson.model.Hudson.Read:nxJenkins</permission>
+    <permission>hudson.model.Hudson.Read:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.Hudson.Read:seoji</permission>
+    <permission>hudson.model.Hudson.Read:suker</permission>
+    <permission>hudson.model.Item.Build:nxJenkins</permission>
+    <permission>hudson.model.Item.Build:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.Item.Build:seoji</permission>
+    <permission>hudson.model.Item.Build:suker</permission>
+    <permission>hudson.model.Item.Cancel:nxJenkins</permission>
+    <permission>hudson.model.Item.Cancel:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.Item.Cancel:seoji</permission>
+    <permission>hudson.model.Item.Cancel:suker</permission>
+    <permission>hudson.model.Item.Configure:nxJenkins</permission>
+    <permission>hudson.model.Item.Configure:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.Item.Configure:seoji</permission>
+    <permission>hudson.model.Item.Configure:suker</permission>
+    <permission>hudson.model.Item.Create:nxJenkins</permission>
+    <permission>hudson.model.Item.Create:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.Item.Create:seoji</permission>
+    <permission>hudson.model.Item.Create:suker</permission>
+    <permission>hudson.model.Item.Delete:nxJenkins</permission>
+    <permission>hudson.model.Item.Discover:nxJenkins</permission>
+    <permission>hudson.model.Item.Move:nxJenkins</permission>
+    <permission>hudson.model.Item.Read:anonymous</permission>
+    <permission>hudson.model.Item.Read:nxJenkins</permission>
+    <permission>hudson.model.Item.Read:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.Item.Read:seoji</permission>
+    <permission>hudson.model.Item.Read:suker</permission>
+    <permission>hudson.model.Item.Workspace:nxJenkins</permission>
+    <permission>hudson.model.Item.Workspace:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.Run.Delete:nxJenkins</permission>
+    <permission>hudson.model.Run.Replay:nxJenkins</permission>
+    <permission>hudson.model.Run.Replay:seoji</permission>
+    <permission>hudson.model.Run.Replay:suker</permission>
+    <permission>hudson.model.Run.Update:nxJenkins</permission>
+    <permission>hudson.model.Run.Update:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.View.Configure:nxJenkins</permission>
+    <permission>hudson.model.View.Configure:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.View.Configure:seoji</permission>
+    <permission>hudson.model.View.Configure:suker</permission>
+    <permission>hudson.model.View.Create:nxJenkins</permission>
+    <permission>hudson.model.View.Create:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.View.Create:seoji</permission>
+    <permission>hudson.model.View.Create:suker</permission>
+    <permission>hudson.model.View.Delete:nxJenkins</permission>
+    <permission>hudson.model.View.Read:anonymous</permission>
+    <permission>hudson.model.View.Read:nxJenkins</permission>
+    <permission>hudson.model.View.Read:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.View.Read:seoji</permission>
+    <permission>hudson.model.View.Read:suker</permission>
+    <permission>hudson.scm.SCM.Tag:nxJenkins</permission>
+    <permission>org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:nxJenkins</permission>
+    <permission>org.jenkins.plugins.lockableresources.LockableResourcesManager.Reserve:seoji</permission>
+    <permission>org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:nxJenkins</permission>
+    <permission>org.jenkins.plugins.lockableresources.LockableResourcesManager.Unlock:seoji</permission>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+    <disableSignup>false</disableSignup>
+    <enableCaptcha>false</enableCaptcha>
+  </securityRealm>
+  <disableRememberMe>false</disableRememberMe>
+  <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+  <workspaceDir>${JENKINS_HOME}/workspace/${ITEM_FULL_NAME}</workspaceDir>
+  <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+  <markupFormatter class="hudson.markup.EscapedMarkupFormatter"/>
+  <jdks/>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>all</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>BSP</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>legacy_bl1_s5p4418</string>
+        <string>legacy_linux_kernel-4.4.x</string>
+        <string>legacy_u-boot-2016.01</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Android</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
+        <string>android_nougat_daily_source_setup</string>
+        <string>android_nougat_s5p4418_daily</string>
+        <string>android_nougat_s5p4418_weekly</string>
+        <string>android_nougat_s5p6818_daily</string>
+        <string>android_nougat_s5p6818_weekly</string>
+        <string>android_nougat_weekly_source_setup</string>
+        <string>android_pie_daily_source_setup</string>
+        <string>android_pie_s5p4418_daily</string>
+        <string>android_pie_s5p4418_weekly</string>
+        <string>android_pie_s5p6818_daily</string>
+        <string>android_pie_s5p6818_weekly</string>
+        <string>android_pie_weekly_source_setup</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Yocto</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
+        <string>yocto_sumo_daily_source_setup</string>
+        <string>yocto_sumo_daudio-ref_daily</string>
+        <string>yocto_sumo_daudio-ref_weekly</string>
+        <string>yocto_sumo_s5p4418_daily</string>
+        <string>yocto_sumo_s5p4418_weekly</string>
+        <string>yocto_sumo_s5p6818_daily</string>
+        <string>yocto_sumo_s5p6818_weekly</string>
+        <string>yocto_sumo_weekly_source_setup</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+        <org.jenkinsci.plugins.schedulebuild.ScheduleBuildButtonColumn plugin="schedule-build@0.5.1"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+    <listView>
+      <owner class="hudson" reference="../../.."/>
+      <name>Project Manager</name>
+      <description>job builder trigger</description>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <jobNames>
+        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>_Jenkins_job_builder</string>
+      </jobNames>
+      <jobFilters/>
+      <columns>
+        <hudson.views.StatusColumn/>
+        <hudson.views.WeatherColumn/>
+        <hudson.views.JobColumn/>
+        <hudson.views.LastSuccessColumn/>
+        <hudson.views.LastFailureColumn/>
+        <hudson.views.LastDurationColumn/>
+        <hudson.views.BuildButtonColumn/>
+        <hudson.plugins.favorite.column.FavoriteColumn plugin="favorite@2.3.2"/>
+        <org.jenkinsci.plugins.schedulebuild.ScheduleBuildButtonColumn plugin="schedule-build@0.5.1"/>
+      </columns>
+      <recurse>false</recurse>
+    </listView>
+  </views>
+  <primaryView>all</primaryView>
+  <slaveAgentPort>-1</slaveAgentPort>
+  <label></label>
+  <crumbIssuer class="hudson.security.csrf.DefaultCrumbIssuer">
+    <excludeClientIPFromCrumb>false</excludeClientIPFromCrumb>
+  </crumbIssuer>
+  <nodeProperties/>
+  <globalNodeProperties>
+    <hudson.slaves.EnvironmentVariablesNodeProperty>
+      <envVars serialization="custom">
+        <unserializable-parents/>
+        <tree-map>
+          <default>
+            <comparator class="hudson.util.CaseInsensitiveComparator"/>
+          </default>
+          <int>4</int>
+          <string>PATH</string>
+          <string>$PATH:${TOOLCHAIN_ARM_CORTEX_A9}/bin:${TOOLCHAIN_GCC_LINARO_AARCH64}/bin:${TOOLCHAIN_ARM_EABI}/bin</string>
+          <string>TOOLCHAIN_ARM_CORTEX_A9</string>
+          <string>/opt/crosstools/arm-cortex_a9-eabi-4.7-eglibc-2.18</string>
+          <string>TOOLCHAIN_ARM_EABI</string>
+          <string>/opt/crosstools/arm-eabi-4.8</string>
+          <string>TOOLCHAIN_GCC_LINARO_AARCH64</string>
+          <string>/opt/crosstools/gcc-linaro-4.9-2015.05-x86_64_aarch64-linux-gnu</string>
+        </tree-map>
+      </envVars>
+    </hudson.slaves.EnvironmentVariablesNodeProperty>
+  </globalNodeProperties>
+</hudson>
