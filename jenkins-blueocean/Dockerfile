@@ -35,7 +35,7 @@ RUN echo "jenkins:jenkins" | chpasswd && adduser jenkins sudo
 VOLUME /var/jenkins_home
 VOLUME /var/lib/jenkins
 
-COPY run.sh /var/jenkins_home/
+COPY jenkins-run.sh /var/jenkins_home/
 
 RUN apt-get update && apt-get install -y python3 vim locales
 RUN apt-get update && apt-get install -y android-tools-fsutils
