@@ -1,35 +1,40 @@
-<?xml version='1.1' encoding='UTF-8'?>
-<project>
+<?xml version="1.0" encoding="UTF-8"?><project>
   <actions/>
-  <description>Android Nougat s5p6818 daily build&#xd;
-&#xd;
-s5p4418-navi-ref daily build 직후 trigger 됨.&#xd;
-</description>
+  <description>Android Nougat s5p6818 daily build
+
+s5p4418-navi-ref daily build 직후 trigger 됨.
+&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
   <keepDependencies>false</keepDependencies>
+  <disabled>false</disabled>
+  <displayName>android_nougat_s5p6818_daily</displayName>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <assignedNode>master</assignedNode>
+  <canRoam>false</canRoam>
   <properties>
+    <hudson.security.AuthorizationMatrixProperty>
+      <permission>hudson.model.Item.Read:anonymous</permission>
+      <permission>hudson.model.Item.ExtendedRead:anonymous</permission>
+      <permission>hudson.model.Item.Workspace:anonymous</permission>
+    </hudson.security.AuthorizationMatrixProperty>
     <jenkins.model.BuildDiscarderProperty>
       <strategy class="hudson.tasks.LogRotator">
-        <daysToKeep>10</daysToKeep>
-        <numToKeep>3</numToKeep>
+        <daysToKeep>31</daysToKeep>
+        <numToKeep>10</numToKeep>
         <artifactDaysToKeep>-1</artifactDaysToKeep>
         <artifactNumToKeep>-1</artifactNumToKeep>
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
   </properties>
   <scm class="hudson.scm.NullSCM"/>
-  <canRoam>true</canRoam>
-  <disabled>false</disabled>
-  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
-  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers/>
-  <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
 
-echo &quot;******************************************&quot;
-echo &quot;   Jenkins - Android environment setup    &quot;
-echo &quot;******************************************&quot;
+echo "******************************************"
+echo "   Jenkins - Android environment setup    "
+echo "******************************************"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -38,86 +43,89 @@ export USER=nxJenkins
 
 repo sync
 
-echo &quot;************************************&quot;
-echo &quot;   Android nougat s5p6818 avn_ref   &quot;
-echo &quot;************************************&quot;
+echo "************************************"
+echo "   Android nougat s5p6818 avn_ref   "
+echo "************************************"
 ./device/nexell/avn_ref/build.sh -s s5p6818 -d result-avn
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
 
-echo &quot;************************************&quot;
-echo &quot; BUILD-INFO.txt copy to result dir  &quot;
-echo &quot;************************************&quot;
+echo "************************************"
+echo " clean old dirs                     "
+echo "************************************"
+rm -rf result-*-daily
+rm -rf result-*-daily.tar.gz
+
+echo "************************************"
+echo " BUILD-INFO.txt copy to result dir  "
+echo "************************************"
 cp ${JENKINS_HOME}/snapshot_build_info/BUILD-INFO.txt result-avn/
 
-echo &quot;************************************&quot;
-echo &quot; Compress result dirs               &quot;
-echo &quot;************************************&quot;
+echo "************************************"
+echo " Compress result dirs               "
+echo "************************************"
 tar cvzf result-s5p6818-avn-ref-nougat.tar.gz   result-avn/*
 
-echo &quot;************************************&quot;
-echo &quot; Rename tarballs                    &quot;
-echo &quot;************************************&quot;
+echo "************************************"
+echo " Rename tarballs                    "
+echo "************************************"
 mv result-s5p6818-avn-ref-nougat.tar.gz  result-s5p6818-android-nougat-avn-ref-`date +%Y%m%d`-daily.tar.gz
 
-echo &quot;************************************&quot;
-echo &quot; Rename result dirs                 &quot;
-echo &quot;************************************&quot;
-mv result-avn         result-s5p6818-android-nougat-avn-ref-`date +%Y%m%d`-daily</command>
+echo "************************************"
+echo " Rename result dirs                 "
+echo "************************************"
+mv result-avn         result-s5p6818-android-nougat-avn-ref-`date +%Y%m%d`-daily
+</command>
     </hudson.tasks.Shell>
+    <jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
+      <delegate>
+        <consolePrefix>SSH: </consolePrefix>
+        <delegate>
+          <publishers>
+            <jenkins.plugins.publish__over__ssh.BapSshPublisher>
+              <configName>nexell-snapshot</configName>
+              <verbose>false</verbose>
+              <transfers>
+                <jenkins.plugins.publish__over__ssh.BapSshTransfer>
+                  <remoteDirectory>s5p6818/android/nougat/daily</remoteDirectory>
+                  <sourceFiles>result-*/**</sourceFiles>
+                  <excludes/>
+                  <removePrefix/>
+                  <remoteDirectorySDF>false</remoteDirectorySDF>
+                  <flatten>false</flatten>
+                  <cleanRemote>false</cleanRemote>
+                  <execTimeout>3600</execTimeout>
+                </jenkins.plugins.publish__over__ssh.BapSshTransfer>
+              </transfers>
+              <useWorkspaceInPromotion>false</useWorkspaceInPromotion>
+              <usePromotionTimestamp>false</usePromotionTimestamp>
+            </jenkins.plugins.publish__over__ssh.BapSshPublisher>
+          </publishers>
+          <continueOnError>false</continueOnError>
+          <failOnError>false</failOnError>
+          <alwaysPublishFromMaster>false</alwaysPublishFromMaster>
+          <hostConfigurationAccess class="jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin" reference="../.."/>
+        </delegate>
+      </delegate>
+    </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
   </builders>
   <publishers>
-    <hudson.plugins.logparser.LogParserPublisher plugin="log-parser@2.0">
+    <hudson.plugins.logparser.LogParserPublisher plugin="log-parser">
       <unstableOnWarning>false</unstableOnWarning>
-      <failBuildOnError>false</failBuildOnError>
-      <showGraphs>false</showGraphs>
-      <parsingRulesPath>/var/lib/jenkins/build_rule/build_android.rules</parsingRulesPath>
+      <failBuildOnError>true</failBuildOnError>
+      <showGraphs>true</showGraphs>
       <useProjectRule>false</useProjectRule>
+      <parsingRulesPath>/var/lib/jenkins/build_rule/build_android.rules</parsingRulesPath>
     </hudson.plugins.logparser.LogParserPublisher>
-    <jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin plugin="publish-over-ssh@1.20.1">
-      <consolePrefix>SSH: </consolePrefix>
-      <delegate plugin="publish-over@0.22">
-        <publishers>
-          <jenkins.plugins.publish__over__ssh.BapSshPublisher plugin="publish-over-ssh@1.20.1">
-            <configName>nexell-snapshot</configName>
-            <verbose>false</verbose>
-            <transfers>
-              <jenkins.plugins.publish__over__ssh.BapSshTransfer>
-                <remoteDirectory>snapshot/s5p6818/android/nougat/daily</remoteDirectory>
-                <sourceFiles>result-*/**</sourceFiles>
-                <excludes></excludes>
-                <removePrefix></removePrefix>
-                <remoteDirectorySDF>false</remoteDirectorySDF>
-                <flatten>false</flatten>
-                <cleanRemote>false</cleanRemote>
-                <noDefaultExcludes>false</noDefaultExcludes>
-                <makeEmptyDirs>false</makeEmptyDirs>
-                <patternSeparator>[, ]+</patternSeparator>
-                <execCommand></execCommand>
-                <execTimeout>120000</execTimeout>
-                <usePty>false</usePty>
-                <useAgentForwarding>false</useAgentForwarding>
-              </jenkins.plugins.publish__over__ssh.BapSshTransfer>
-            </transfers>
-            <useWorkspaceInPromotion>false</useWorkspaceInPromotion>
-            <usePromotionTimestamp>false</usePromotionTimestamp>
-          </jenkins.plugins.publish__over__ssh.BapSshPublisher>
-        </publishers>
-        <continueOnError>false</continueOnError>
-        <failOnError>false</failOnError>
-        <alwaysPublishFromMaster>false</alwaysPublishFromMaster>
-        <hostConfigurationAccess class="jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin" reference="../.."/>
-      </delegate>
-    </jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin>
-    <hudson.tasks.Mailer plugin="mailer@1.22">
+    <hudson.tasks.Mailer plugin="mailer">
       <recipients>jenkins@nexell.co.kr</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
   </publishers>
   <buildWrappers>
-    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.8.10"/>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper/>
   </buildWrappers>
 </project>

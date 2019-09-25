@@ -3,6 +3,10 @@
   <version>1</version>
   <idToDirectoryNameMap class="concurrent-hash-map">
     <entry>
+      <string>seoji</string>
+      <string>seoji_4976269939650790787</string>
+    </entry>
+    <entry>
       <string>nxjenkinsjobbuilder</string>
       <string>nxJenkinsJobBu_2623559634817679489</string>
     </entry>

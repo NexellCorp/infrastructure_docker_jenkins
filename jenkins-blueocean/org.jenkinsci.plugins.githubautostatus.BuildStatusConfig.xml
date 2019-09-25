@@ -1,0 +1,9 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.githubautostatus.BuildStatusConfig plugin="github-autostatus@3.2">
+  <credentialsId></credentialsId>
+  <influxDbUrl></influxDbUrl>
+  <influxDbDatabase></influxDbDatabase>
+  <influxDbRetentionPolicy></influxDbRetentionPolicy>
+  <enableInfluxDb>false</enableInfluxDb>
+  <disableGithub>false</disableGithub>
+</org.jenkinsci.plugins.githubautostatus.BuildStatusConfig>

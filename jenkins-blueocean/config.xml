@@ -42,6 +42,7 @@
     <permission>hudson.model.Item.Cancel:nxJenkinsJobBuilder</permission>
     <permission>hudson.model.Item.Cancel:seoji</permission>
     <permission>hudson.model.Item.Cancel:suker</permission>
+    <permission>hudson.model.Item.Configure:anonymous</permission>
     <permission>hudson.model.Item.Configure:nxJenkins</permission>
     <permission>hudson.model.Item.Configure:nxJenkinsJobBuilder</permission>
     <permission>hudson.model.Item.Configure:seoji</permission>
@@ -66,6 +67,7 @@
     <permission>hudson.model.Run.Replay:suker</permission>
     <permission>hudson.model.Run.Update:nxJenkins</permission>
     <permission>hudson.model.Run.Update:nxJenkinsJobBuilder</permission>
+    <permission>hudson.model.View.Configure:anonymous</permission>
     <permission>hudson.model.View.Configure:nxJenkins</permission>
     <permission>hudson.model.View.Configure:nxJenkinsJobBuilder</permission>
     <permission>hudson.model.View.Configure:seoji</permission>
@@ -143,10 +145,6 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
         <string>android_nougat_daily_source_setup</string>
-        <string>android_nougat_s5p4418_daily</string>
-        <string>android_nougat_s5p4418_weekly</string>
-        <string>android_nougat_s5p6818_daily</string>
-        <string>android_nougat_s5p6818_weekly</string>
         <string>android_nougat_weekly_source_setup</string>
         <string>android_pie_daily_source_setup</string>
         <string>android_pie_s5p4418_daily</string>
@@ -154,6 +152,10 @@
         <string>android_pie_s5p6818_daily</string>
         <string>android_pie_s5p6818_weekly</string>
         <string>android_pie_weekly_source_setup</string>
+        <string>z_old_android_nougat_s5p4418_daily</string>
+        <string>z_old_android_nougat_s5p4418_weekly</string>
+        <string>z_old_android_nougat_s5p6818_daily</string>
+        <string>z_old_android_nougat_s5p6818_weekly</string>
       </jobNames>
       <jobFilters/>
       <columns>
@@ -177,13 +179,13 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView/jobNames/comparator"/>
         <string>yocto_sumo_daily_source_setup</string>
-        <string>yocto_sumo_daudio-ref_daily</string>
-        <string>yocto_sumo_daudio-ref_weekly</string>
-        <string>yocto_sumo_s5p4418_daily</string>
-        <string>yocto_sumo_s5p4418_weekly</string>
-        <string>yocto_sumo_s5p6818_daily</string>
-        <string>yocto_sumo_s5p6818_weekly</string>
         <string>yocto_sumo_weekly_source_setup</string>
+        <string>z_old_yocto_sumo_daudio-ref_daily</string>
+        <string>z_old_yocto_sumo_daudio-ref_weekly</string>
+        <string>z_old_yocto_sumo_s5p4418_daily</string>
+        <string>z_old_yocto_sumo_s5p4418_weekly</string>
+        <string>z_old_yocto_sumo_s5p6818_daily</string>
+        <string>z_old_yocto_sumo_s5p6818_weekly</string>
       </jobNames>
       <jobFilters/>
       <columns>

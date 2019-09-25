@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?><project>
+  <actions/>
+  <description>s5p4418-convergence-svmc i2c unit test&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <disabled>false</disabled>
+  <displayName>unit_test_i2c_linux_kernel4.4.x_TEST</displayName>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <assignedNode>master</assignedNode>
+  <canRoam>false</canRoam>
+  <properties>
+    <hudson.security.AuthorizationMatrixProperty>
+      <permission>hudson.model.Item.Read:anonymous</permission>
+      <permission>hudson.model.Item.ExtendedRead:anonymous</permission>
+      <permission>hudson.model.Item.Workspace:anonymous</permission>
+    </hudson.security.AuthorizationMatrixProperty>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>5</daysToKeep>
+        <numToKeep>3</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>LAVA_SERVER</name>
+          <description>https://192.168.1.20</description>
+          <defaultValue>nexell.lava.server</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>QA_SERVER</name>
+          <description/>
+          <defaultValue>http://192.168.1.20:5000</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>QA_SERVER_TEAM</name>
+          <description/>
+          <defaultValue>nx-solution-team</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>QA_SERVER_PROJECT</name>
+          <description/>
+          <defaultValue>unit-test-i2c-linux-kernel-4.4.x</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>QA_REPORTS_TOKEN</name>
+          <description>token of the nxJenkins in SQUAD system</description>
+          <defaultValue>0e9c0f8a4a272851557933c7a0f6e21607670c75</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>DEVICE_TYPE</name>
+          <description/>
+          <defaultValue>s5p4418-convergence-svmc-type</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <triggers class="vector">
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
+      <spec/>
+      <gerritProjects>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
+          <compareType>PLAIN</compareType>
+          <pattern>NexellCorp/linux_kernel-4.4.x</pattern>
+          <branches>
+            <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.Branch>
+              <compareType>PLAIN</compareType>
+              <pattern>nexell</pattern>
+            </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.Branch>
+          </branches>
+          <filePaths>
+            <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
+              <compareType>ANT</compareType>
+              <pattern>drivers/media/i2c/**</pattern>
+            </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
+          </filePaths>
+          <disableStrictForbiddenFileVerification>false</disableStrictForbiddenFileVerification>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
+      </gerritProjects>
+      <skipVote>
+        <onSuccessful>false</onSuccessful>
+        <onFailed>false</onFailed>
+        <onUnstable>false</onUnstable>
+        <onNotBuilt>false</onNotBuilt>
+      </skipVote>
+      <silentMode>false</silentMode>
+      <silentStartMode>false</silentStartMode>
+      <escapeQuotes>false</escapeQuotes>
+      <noNameAndEmailParameters>false</noNameAndEmailParameters>
+      <readableMessage>false</readableMessage>
+      <dependencyJobsNames/>
+      <notificationLevel>ALL</notificationLevel>
+      <dynamicTriggerConfiguration>False</dynamicTriggerConfiguration>
+      <triggerConfigURL/>
+      <triggerInformationAction/>
+      <allowTriggeringUnreviewedPatches>false</allowTriggeringUnreviewedPatches>
+      <triggerOnEvents>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
+          <excludeDrafts>true</excludeDrafts>
+          <excludeTrivialRebase>true</excludeTrivialRebase>
+          <excludeNoCodeChange>true</excludeNoCodeChange>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
+      </triggerOnEvents>
+      <buildStartMessage/>
+      <buildFailureMessage>
+**************************************************
+LAVA TEST Fail!
+
+Please follow the link below...
+
+SQUAD : ${QA_SERVER}/${QA_SERVER_TEAM}/${QA_SERVER_PROJECT}/build/${JOB_NAME}-${BUILD_NUMBER}/
+**************************************************
+</buildFailureMessage>
+      <buildSuccessfulMessage/>
+      <buildUnstableMessage/>
+      <buildNotBuiltMessage/>
+      <buildUnsuccessfulFilepath/>
+      <customUrl/>
+      <serverName>NexellCorpGerritHub</serverName>
+    </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
+  </triggers>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/sh
+
+echo $PWD
+${JENKINS_HOME}/scripts/checkGitStatus.sh -p NexellCorp/linux_kernel-4.4.x -b nexell
+git checkout nexell
+
+echo "========================================"
+echo ${GERRIT_PATCHSET_REVISION}
+echo "========================================"
+${JENKINS_HOME}/scripts/getPatchSetLatest.sh -p NexellCorp/linux_kernel-4.4.x -b nexell -c ${GERRIT_PATCHSET_REVISION}
+
+echo "kernel build!"
+echo "##################################################################################"
+echo " s5p4418-convergence-svmc kernel build start !"
+echo "##################################################################################"
+make clean
+make ARCH=arm s5p4418_convergence_svmc_defconfig
+make ARCH=arm CROSS_COMPILE=arm-cortex_a9-linux-gnueabi- Image -j4
+make ARCH=arm CROSS_COMPILE=arm-cortex_a9-linux-gnueabi- dtbs -j4
+make ARCH=arm CROSS_COMPILE=arm-cortex_a9-linux-gnueabi- modules -j4
+
+echo "========================================"
+echo "boot.img convert"
+echo "========================================"
+wget http://192.168.1.25:8080/s5p4418/yocto/sumo/weekly/result-s5p4418-convergence-svmc-ubuntu-for-lava-test.tar.gz     
+tar xvzf result-s5p4418-convergence-svmc-ubuntu-for-lava-test.tar.gz
+cp arch/arm/boot/Image result-s5p4418-convergence-svmc-ubuntu/boot/
+cp arch/arm/boot/dts/nexell/s5p4418-convergence-svmc-*.dtb result-s5p4418-convergence-svmc-ubuntu/boot/
+cd result-s5p4418-convergence-svmc-ubuntu
+
+echo "========================================"
+echo "convert to boot.img"
+echo "========================================"
+echo " partition size reference ==&gt; "
+echo "   meta-nexell/meta-nexell-distro/tools/convert_tools/convert_images.sh"
+make_ext4fs -s -l 67108864 boot.img ./boot/
+cd ..
+
+echo "========================================"
+echo "compress result-s5p4418-convergence-svmc-ubuntu-i2c-for-lava-test.tar.gz"
+echo "========================================"
+tar cvzf result-s5p4418-convergence-svmc-ubuntu-i2c-for-lava-test.tar.gz   result-s5p4418-convergence-svmc-ubuntu/*
+</command>
+    </hudson.tasks.Shell>
+    <jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
+      <delegate>
+        <consolePrefix>SSH: </consolePrefix>
+        <delegate>
+          <publishers>
+            <jenkins.plugins.publish__over__ssh.BapSshPublisher>
+              <configName>nexell-snapshot</configName>
+              <verbose>false</verbose>
+              <transfers>
+                <jenkins.plugins.publish__over__ssh.BapSshTransfer>
+                  <remoteDirectory>s5p4418/kernel/i2c_test</remoteDirectory>
+                  <sourceFiles>result-s5p4418-convergence-svmc-ubuntu/boot.img</sourceFiles>
+                  <excludes/>
+                  <removePrefix>result-s5p4418-convergence-svmc-ubuntu</removePrefix>
+                  <remoteDirectorySDF>false</remoteDirectorySDF>
+                  <flatten>false</flatten>
+                  <cleanRemote>false</cleanRemote>
+                  <execTimeout>3600</execTimeout>
+                </jenkins.plugins.publish__over__ssh.BapSshTransfer>
+              </transfers>
+              <useWorkspaceInPromotion>false</useWorkspaceInPromotion>
+              <usePromotionTimestamp>false</usePromotionTimestamp>
+            </jenkins.plugins.publish__over__ssh.BapSshPublisher>
+          </publishers>
+          <continueOnError>false</continueOnError>
+          <failOnError>false</failOnError>
+          <alwaysPublishFromMaster>false</alwaysPublishFromMaster>
+          <hostConfigurationAccess class="jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin" reference="../.."/>
+        </delegate>
+      </delegate>
+    </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
+    <jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
+      <delegate>
+        <consolePrefix>SSH: </consolePrefix>
+        <delegate>
+          <publishers>
+            <jenkins.plugins.publish__over__ssh.BapSshPublisher>
+              <configName>nexell-snapshot</configName>
+              <verbose>false</verbose>
+              <transfers>
+                <jenkins.plugins.publish__over__ssh.BapSshTransfer>
+                  <remoteDirectory>s5p4418/kernel/i2c_test</remoteDirectory>
+                  <sourceFiles>arch/arm64/boot/Image arch/arm64/boot/dts/nexell/s5p4418-convergence-svmc*.dtb</sourceFiles>
+                  <excludes/>
+                  <removePrefix>arch/arm64/boot</removePrefix>
+                  <remoteDirectorySDF>false</remoteDirectorySDF>
+                  <flatten>false</flatten>
+                  <cleanRemote>false</cleanRemote>
+                  <execTimeout>3600</execTimeout>
+                </jenkins.plugins.publish__over__ssh.BapSshTransfer>
+              </transfers>
+              <useWorkspaceInPromotion>false</useWorkspaceInPromotion>
+              <usePromotionTimestamp>false</usePromotionTimestamp>
+            </jenkins.plugins.publish__over__ssh.BapSshPublisher>
+          </publishers>
+          <continueOnError>false</continueOnError>
+          <failOnError>false</failOnError>
+          <alwaysPublishFromMaster>false</alwaysPublishFromMaster>
+          <hostConfigurationAccess class="jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin" reference="../.."/>
+        </delegate>
+      </delegate>
+    </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
+    <jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
+      <delegate>
+        <consolePrefix>SSH: </consolePrefix>
+        <delegate>
+          <publishers>
+            <jenkins.plugins.publish__over__ssh.BapSshPublisher>
+              <configName>nexell-snapshot</configName>
+              <verbose>false</verbose>
+              <transfers>
+                <jenkins.plugins.publish__over__ssh.BapSshTransfer>
+                  <remoteDirectory>s5p4418/yocto/sumo/weekly</remoteDirectory>
+                  <sourceFiles>result-s5p4418-convergence-svmc-ubuntu-i2c-for-lava-test.tar.gz</sourceFiles>
+                  <excludes/>
+                  <removePrefix/>
+                  <remoteDirectorySDF>false</remoteDirectorySDF>
+                  <flatten>false</flatten>
+                  <cleanRemote>false</cleanRemote>
+                  <execTimeout>3600</execTimeout>
+                </jenkins.plugins.publish__over__ssh.BapSshTransfer>
+              </transfers>
+              <useWorkspaceInPromotion>false</useWorkspaceInPromotion>
+              <usePromotionTimestamp>false</usePromotionTimestamp>
+            </jenkins.plugins.publish__over__ssh.BapSshPublisher>
+          </publishers>
+          <continueOnError>false</continueOnError>
+          <failOnError>false</failOnError>
+          <alwaysPublishFromMaster>false</alwaysPublishFromMaster>
+          <hostConfigurationAccess class="jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin" reference="../.."/>
+        </delegate>
+      </delegate>
+    </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+
+echo "---------------------------------------"
+echo "   submit to SQUAD                     "
+echo "---------------------------------------"
+
+ret=`python ${WORKSPACE}/../_Jenkins_job_builder/configs/submit_for_testing.py \
+    --device-type ${DEVICE_TYPE} \
+    --build-number ${JOB_NAME}-${BUILD_NUMBER} \
+    --lava-server ${LAVA_SERVER} \
+    --qa-server ${QA_SERVER} \
+    --qa-server-team ${QA_SERVER_TEAM} \
+    --qa-server-project ${QA_SERVER_PROJECT} \
+    --qa-token ${QA_REPORTS_TOKEN} \
+    --test-plan ${WORKSPACE}/../_Jenkins_job_builder/s5p4418/yocto/sumo/unit/lava-test-plan-yocto-sumo-s5p4418-unit-test-i2c-linux-kernel4.4.x.yaml`
+
+echo "---------------------------------------"
+echo "   POST return value parsing           "
+echo "---------------------------------------"
+IFS=' ' read -ra ADDR &lt;&lt;&lt; "$ret"
+if [ "${ADDR[0]}" == "SUCCESS" ] ; then
+    echo "GOOD"
+    echo "api/testjobs/${ADDR[1]}"
+fi
+
+TESTJOBS="/api/testjobs/${ADDR[1]}/"
+echo "testjobs : ${TESTJOBS}"
+
+echo "---------------------------------------"
+echo " LAVA submitted &amp; fetched &amp; pass check "
+echo "---------------------------------------"
+python ${WORKSPACE}/../_Jenkins_job_builder/configs/squad_lava_check.py "${QA_SERVER}${TESTJOBS}" "${QA_SERVER}/${QA_SERVER_TEAM}/${QA_SERVER_PROJECT}/build/${JOB_NAME}-${BUILD_NUMBER}/"
+
+sleep 5
+
+python ${WORKSPACE}/../_Jenkins_job_builder/configs/squad_lava_test_pass_fail.py "${QA_SERVER}${TESTJOBS}"
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.plugins.logparser.LogParserPublisher plugin="log-parser">
+      <unstableOnWarning>false</unstableOnWarning>
+      <failBuildOnError>true</failBuildOnError>
+      <showGraphs>true</showGraphs>
+      <useProjectRule>false</useProjectRule>
+      <parsingRulesPath>/var/lib/jenkins/build_rule/build_yocto.rules</parsingRulesPath>
+    </hudson.plugins.logparser.LogParserPublisher>
+    <hudson.tasks.Mailer plugin="mailer">
+      <recipients>teamleader@nexell.co.kr</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper/>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup">
+      <deleteDirs>false</deleteDirs>
+      <cleanupParameter/>
+      <externalDelete/>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+      <bindings>
+        <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+          <variable>QA_REPORTS_TOKEN</variable>
+          <credentialsId>QA_REPORTS_TOKEN</credentialsId>
+        </org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+      </bindings>
+    </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+  </buildWrappers>
+</project>

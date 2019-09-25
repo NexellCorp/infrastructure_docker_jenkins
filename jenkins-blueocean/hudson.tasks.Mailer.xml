@@ -1,0 +1,9 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson.tasks.Mailer_-DescriptorImpl plugin="mailer@1.23">
+  <defaultSuffix>jenkins@nexell.co.kr</defaultSuffix>
+  <hudsonUrl>http://119.65.249.122:8100/</hudsonUrl>
+  <smtpHost>ezsmtp.bizmeka.com</smtpHost>
+  <useSsl>false</useSsl>
+  <smtpPort>25</smtpPort>
+  <charset>UTF-8</charset>
+</hudson.tasks.Mailer_-DescriptorImpl>

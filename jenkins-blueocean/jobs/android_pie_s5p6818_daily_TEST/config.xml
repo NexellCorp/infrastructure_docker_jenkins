@@ -1,0 +1,186 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <displayName>android_pie_s5p6818_daily_TEST</displayName>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>5</daysToKeep>
+        <numToKeep>15</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>LAVA_SERVER</name>
+          <description>http://192.168.1.20/RPC2/</description>
+          <defaultValue>nexell.lava.server</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>QA_SERVER</name>
+          <description></description>
+          <defaultValue>http://192.168.1.20:5000</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>QA_SERVER_TEAM</name>
+          <description></description>
+          <defaultValue>nx-solution-team</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>QA_SERVER_PROJECT</name>
+          <description></description>
+          <defaultValue>android-pie</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>QA_REPORTS_TOKEN</name>
+          <description>token of the nxJenkins in SQUAD system
+admin token: f3bea0ededed73761fe549478fcfb870ebb4c113</description>
+          <defaultValue>f3bea0ededed73761fe549478fcfb870ebb4c113</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>DEVICE_TYPE</name>
+          <description></description>
+          <defaultValue>s5p6818-convergence-type</defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>TZ=Asia/Seoul
+H(0-1) 06 * * *
+</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+
+echo &quot;---------------------------------------&quot;
+echo &quot;   submit to SQUAD                     &quot;
+echo &quot;---------------------------------------&quot;
+
+ret=`python ${WORKSPACE}/../_Jenkins_job_builder/configs/submit_for_testing.py \
+    --device-type ${DEVICE_TYPE} \
+    --build-number ${JOB_NAME}-${BUILD_NUMBER} \
+    --lava-server ${LAVA_SERVER} \
+    --qa-server ${QA_SERVER} \
+    --qa-server-team ${QA_SERVER_TEAM} \
+    --qa-server-project ${QA_SERVER_PROJECT} \
+    --qa-token ${QA_REPORTS_TOKEN} \
+    --test-plan ${WORKSPACE}/../_Jenkins_job_builder/s5p6818/android/pie/daily/lava-test-plan-s5p6818-con-svma-android-pie-daily.yaml`
+
+echo &quot;---------------------------------------&quot;
+echo &quot;   POST return value parsing           &quot;
+echo &quot;---------------------------------------&quot;
+IFS=&apos; &apos; read -ra ADDR &lt;&lt;&lt; &quot;$ret&quot;
+if [ &quot;${ADDR[0]}&quot; == &quot;SUCCESS&quot; ] ; then
+    echo &quot;GOOD&quot;
+    echo &quot;api/testjobs/${ADDR[1]}&quot;
+fi
+
+TESTJOBS=&quot;/api/testjobs/${ADDR[1]}/&quot;
+echo &quot;testjobs : ${TESTJOBS}&quot;
+
+echo &quot;---------------------------------------&quot;
+echo &quot; LAVA submitted &amp; fetched &amp; pass check &quot;
+echo &quot;---------------------------------------&quot;
+echo &quot;${QA_SERVER}${TESTJOBS}&quot;
+echo &quot;${QA_SERVER}/${QA_SERVER_TEAM}/${QA_SERVER_PROJECT}/build/${JOB_NAME}-${BUILD_NUMBER}/&quot;
+python ${WORKSPACE}/../_Jenkins_job_builder/configs/squad_lava_check.py &quot;${QA_SERVER}${TESTJOBS}&quot; &quot;${QA_SERVER}/${QA_SERVER_TEAM}/${QA_SERVER_PROJECT}/build/${JOB_NAME}-${BUILD_NUMBER}/&quot;
+
+sleep 6
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.plugins.logparser.LogParserPublisher plugin="log-parser@2.0">
+      <unstableOnWarning>false</unstableOnWarning>
+      <failBuildOnError>true</failBuildOnError>
+      <showGraphs>true</showGraphs>
+      <parsingRulesPath>/var/lib/jenkins/build_rule/build_android.rules</parsingRulesPath>
+      <useProjectRule>false</useProjectRule>
+    </hudson.plugins.logparser.LogParserPublisher>
+    <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.66">
+      <recipientList>jenkins@nexell.co.kr, seoji@nexell.co.kr</recipientList>
+      <configuredTriggers>
+        <hudson.plugins.emailext.plugins.trigger.UnstableTrigger>
+          <email>
+            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
+            <body>$PROJECT_DEFAULT_CONTENT</body>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.DevelopersRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.RequesterRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+            </recipientProviders>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.UnstableTrigger>
+        <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+          <email>
+            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
+            <body>$PROJECT_DEFAULT_CONTENT</body>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.DevelopersRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.RequesterRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+            </recipientProviders>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+      </configuredTriggers>
+      <contentType>text/plain</contentType>
+      <defaultSubject>LAVA TEST Fail - ${JOB_NAME}-${BUILD_NUMBER}</defaultSubject>
+      <defaultContent>LAVA Test Fail!
+
+Please follow the below link
+
+SQUAD : ${QA_SERVER}/${QA_SERVER_TEAM}/${QA_SERVER_PROJECT}/build/${JOB_NAME}-${BUILD_NUMBER}/
+</defaultContent>
+      <attachmentsPattern></attachmentsPattern>
+      <presendScript></presendScript>
+      <postsendScript></postsendScript>
+      <attachBuildLog>false</attachBuildLog>
+      <compressBuildLog>false</compressBuildLog>
+      <replyTo>$DEFAULT_REPLYTO</replyTo>
+      <from></from>
+      <saveOutput>false</saveOutput>
+      <disabled>false</disabled>
+    </hudson.plugins.emailext.ExtendedEmailPublisher>
+  </publishers>
+  <buildWrappers>
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.19">
+      <bindings>
+        <org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+          <credentialsId>QA_REPORTS_TOKEN</credentialsId>
+          <variable>QA_REPORTS_TOKEN</variable>
+        </org.jenkinsci.plugins.credentialsbinding.impl.StringBinding>
+      </bindings>
+    </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.9"/>
+  </buildWrappers>
+</project>

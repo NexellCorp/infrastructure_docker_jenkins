@@ -4,14 +4,15 @@
   <description>Android Pie s5p4418 daily build&#xd;
 convergence svma&#xd;
 &#xd;
-매주 화,목 03:00 trigger됨.&#xd;
+매주 화,목 03:00 trigger됨. (H(0-1) 03 * * 2,4)&#xd;
+-&gt; 매일 02:00 trigger (2019.08.23 임시수정)&#xd;
 </description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <jenkins.model.BuildDiscarderProperty>
       <strategy class="hudson.tasks.LogRotator">
-        <daysToKeep>10</daysToKeep>
-        <numToKeep>3</numToKeep>
+        <daysToKeep>31</daysToKeep>
+        <numToKeep>10</numToKeep>
         <artifactDaysToKeep>-1</artifactDaysToKeep>
         <artifactNumToKeep>-1</artifactNumToKeep>
       </strategy>
@@ -19,13 +20,13 @@ convergence svma&#xd;
   </properties>
   <scm class="hudson.scm.NullSCM"/>
   <canRoam>true</canRoam>
-  <disabled>true</disabled>
+  <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
     <hudson.triggers.TimerTrigger>
       <spec>TZ=Asia/Seoul
-H(0-1) 03 * * 2,4</spec>
+H(0-1) 03 * * *</spec>
     </hudson.triggers.TimerTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
@@ -47,7 +48,7 @@ repo sync
 echo &quot;************************************&quot;
 echo &quot;   Android pie convergence svma     &quot;
 echo &quot;************************************&quot;
-./device/nexell/con_svma/build.sh -d result-con
+#./device/nexell/con_svma/build.sh -d result-con
 
 
 </command>
@@ -63,13 +64,13 @@ echo &quot;************************************&quot;
         <completeBuild>true</completeBuild>
       </threshold>
     </hudson.tasks.BuildTrigger>
-    <hudson.tasks.Mailer plugin="mailer@1.22">
+    <hudson.tasks.Mailer plugin="mailer@1.23">
       <recipients>jenkins@nexell.co.kr</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
   </publishers>
   <buildWrappers>
-    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.8.10"/>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.9"/>
   </buildWrappers>
 </project>

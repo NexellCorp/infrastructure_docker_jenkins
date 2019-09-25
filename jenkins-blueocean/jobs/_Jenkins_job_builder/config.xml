@@ -22,7 +22,7 @@ LAVA test와 연동이 필요한 jenkins project는 auto generate 되도록 .yam
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger plugin="gerrit-trigger@2.27.7">
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger plugin="gerrit-trigger@2.29.0">
       <spec></spec>
       <gerritProjects>
         <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
@@ -64,8 +64,10 @@ LAVA test와 연동이 필요한 jenkins project는 auto generate 되도록 .yam
       <triggerOnEvents>
         <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
           <excludeDrafts>true</excludeDrafts>
-          <excludeTrivialRebase>true</excludeTrivialRebase>
+          <excludeTrivialRebase>false</excludeTrivialRebase>
           <excludeNoCodeChange>true</excludeNoCodeChange>
+          <excludePrivateState>false</excludePrivateState>
+          <excludeWipState>false</excludeWipState>
         </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
         <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginDraftPublishedEvent/>
       </triggerOnEvents>
@@ -99,7 +101,17 @@ echo &quot;-------------------------------&quot;
 yamllist=$(ls -trh ${WORKSPACE}/reference/qemu/jenkins-job*.yaml \
                    ${WORKSPACE}/s5p4418/yocto/sumo/daily/jenkins-job*.yaml \
                    ${WORKSPACE}/s5p4418/yocto/sumo/weekly/jenkins-job*.yaml \
+                   ${WORKSPACE}/s5p6818/yocto/sumo/daily/jenkins-job*.yaml \
+                   ${WORKSPACE}/s5p6818/yocto/sumo/weekly/jenkins-job*.yaml \
+                   ${WORKSPACE}/s5p4418/android/nougat/daily/jenkins-job*.yaml \
                    ${WORKSPACE}/s5p4418/android/nougat/weekly/jenkins-job*.yaml \
+                   ${WORKSPACE}/s5p6818/android/nougat/daily/jenkins-job*.yaml \
+                   ${WORKSPACE}/s5p6818/android/nougat/weekly/jenkins-job*.yaml \
+                   ${WORKSPACE}/s5p4418/android/pie/daily/jenkins-job*.yaml \
+                   ${WORKSPACE}/s5p4418/android/pie/weekly/jenkins-job*.yaml \
+                   ${WORKSPACE}/s5p6818/android/pie/daily/jenkins-job*.yaml \
+                   ${WORKSPACE}/s5p6818/android/pie/weekly/jenkins-job*.yaml \
+                   ${WORKSPACE}/s5p4418/yocto/sumo/unit/jenkins-job*.yaml \
                    ${WORKSPACE}/s5p6818/yocto/sumo/unit/jenkins-job*.yaml \
           )
 
@@ -117,12 +129,12 @@ echo &quot;---------------------------------&quot;</command>
   </builders>
   <publishers/>
   <buildWrappers>
-    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.36">
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.37">
       <deleteDirs>false</deleteDirs>
       <cleanupParameter></cleanupParameter>
       <externalDelete></externalDelete>
       <disableDeferredWipeout>false</disableDeferredWipeout>
     </hudson.plugins.ws__cleanup.PreBuildCleanup>
-    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.8.10"/>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper plugin="timestamper@1.9"/>
   </buildWrappers>
 </project>
